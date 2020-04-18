@@ -24,12 +24,7 @@ namespace FunWithBrandt
                                 hover your mouse over the area in question. This script runs continuously until interrupted with the control + c keyboard command.
                                 You may have issued with dual monitors as I have it crash on me before.",
 
-                Code = @"# -*- coding: utf-8 -*-
-
-                            #This script can be used to help figure out x,y coordinates and RGB numbers.
-                            #Just run it and hover your mouse over the spot you need info on
-                            # press ctrl + c over the console to quit
-
+                Code = @"
                             import pyautogui
                             import time
 
@@ -52,26 +47,27 @@ namespace FunWithBrandt
                 Language = "VBA",
                 Description = @"Basic sub to create an outlook email without sending it.",
 
-                Code = @"Sub OutlookMail()
+                Code = @"
+                        Sub OutlookMail()
 
-                        Dim outlookApp As Object, outlookMail As Object, signature As String
+                            Dim outlookApp As Object, outlookMail As Object, signature As String
 
-                            Set outlookApp = CreateObject('outlook.application')
-                            Set outlookMail = outlookApp.CreateItem(0)
+                                Set outlookApp = CreateObject('outlook.application')
+                                Set outlookMail = outlookApp.CreateItem(0)
 
-                            With outlookMail
-                                .Display
-                                 signature = outlookMail.htmlbody 
-                                .To = 'bgreen3@stategiccomp.com'
-                                .Subject = 'Whatver your Subject is'
-                                .htmlbody = vbNewLine & signature
-                            End With
+                                With outlookMail
+                                    .Display
+                                     signature = outlookMail.htmlbody 
+                                    .To = 'bgreen3@stategiccomp.com'
+                                    .Subject = 'Whatver your Subject is'
+                                    .htmlbody = vbNewLine & signature
+                                End With
 
 
-                            outlookMail.Close 1
+                                outlookMail.Close 1
 
-                            Set outlookApp = Nothing
-                            Set outlookMail = Nothing
+                                Set outlookApp = Nothing
+                                Set outlookMail = Nothing
 
                         End Sub"
             },

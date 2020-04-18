@@ -4,17 +4,32 @@
     ViewData["Title"] = "KnowledgeRepository";
 }
 
-<head>
-    <link href="~/css/StyleSheet.css" rel="stylesheet" />
-</head>
 
+<style>
+    .table-hover tbody tr:hover {
+         background-color: #e6f7ff;
+}
+    .table tr td{
+        padding:5px;
+    }
+
+    caption {
+        caption-side:top;
+    }
+
+    h1 {
+        font-size:xx-large;
+    }
+
+</style>
 
 <h1>KnowledgeRepository</h1>
 
 <br />
 <p>Please enjoy the this beautiful table of learning. You are encouraged to submit additional entries!! </p>
+<br />
+<table class="table table-responsive table-striped table-bordered table-hover">
 
-<table class="Table" @*style="border-collapse:collapse"*@>
     <caption> Master Data</caption>
     <thead>
         <tr>
@@ -38,8 +53,6 @@
             </tr>
         }
     </tbody>
-
-
 
 </table>
 
