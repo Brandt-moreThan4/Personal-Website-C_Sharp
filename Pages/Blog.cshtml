@@ -4,5 +4,21 @@
     ViewData["Title"] = "Blog";
 }
 
-<h1>Blog</h1>
+<h1>Prescription For Hindsight Bias</h1>
+<br />
 
+
+@foreach (var post in Model.blogPosts)
+{
+    <div class="BlogPost">
+        <h4 class="BlogDate">@post.Date</h4>
+        <span class="BlogTitle">@post.Title</span>
+        <br />
+        @* Ideally at some point the below will be an iteration over a list peoprty fo rthe paragraphs or content. *@
+        <p class="BlogContent"> @post.Content</p>
+    </div>
+    <hr />
+    <br />
+    <br />
+
+}
