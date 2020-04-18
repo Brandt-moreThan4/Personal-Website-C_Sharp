@@ -1,0 +1,45 @@
+﻿@page
+@model FunWithBrandt.KnowledgeRepositoryModel
+@{
+    ViewData["Title"] = "KnowledgeRepository";
+}
+
+<head>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+
+
+<h1>KnowledgeRepository</h1>
+
+<br />
+<p>Please enjoy the this beautiful table of learning. You are encouraged to submit additional entries!! </p>
+
+<table class="Table" @*style="border-collapse:collapse"*@>
+    <caption> Master Data</caption>
+    <thead>
+        <tr>
+            <th>Person</th>
+            <th>Institution</th>
+            <th>Description</th>
+            <th>Source</th>
+            <th>Keywords</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var record in Model.knowledgeRecords)
+        {
+            <tr>
+                <td>@record.Person</td>
+                <td>@record.Institution</td>
+                <td>@record.Description</td>
+                <td><a href=@record.Source>@record.Source</a></td>
+                <td>@record.Keywords</td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
+
