@@ -1,4 +1,5 @@
-﻿Aswath Damodaran,NYU,Domadoran's website,http://pages.stern.nyu.edu/~adamodar/,Finance
+﻿Person,Institution,Description,URL,Keywords
+Aswath Damodaran,NYU,Domadoran's website,http://pages.stern.nyu.edu/~adamodar/,Finance
 Robert Shiller,Yale,Shiller's open courses,http://www.econ.yale.edu/~shiller/,Finance
 Howard Marks,Oak Tree Capital,Memo's written by Marks,https://www.oaktreecapital.com/insights/howard-marks-memos,Finance
 Warren Buffet,Berkshire Hathaway,Berkshire's shareholder letters,https://www.berkshirehathaway.com/letters/letters.html,Finance
@@ -23,4 +24,5 @@ Eugene Wei,,,https://www.eugenewei.com/,Blog
 ,,Free video VBA course,https://www.youtube.com/channel/UC7Iuuzc5sK1ZwcIBxiNQJfQ,Programming
 ,Federal Reserve,U.S Household Wealth Data,https://www.federalreserve.gov/apps/fof/DisplayTable.aspx?t=b.101.h,Finance
 ,UCI,Machine learning data sets,https://archive.ics.uci.edu/ml/index.php,Programming;Data
-,,Razor Pages Tutorial (How this website was built),https://www.learnrazorpages.com/,Programming;C#;Web Development
+,,Razor Pages Tutorial,https://www.learnrazorpages.com/,Programming;C#;Web Development
+,,Razor Pages Video Tutorials,https://www.youtube.com/watch?v=3F9SpUYTB6Y&list=PL6n9fhu94yhX6J31qad0wSO1N_rgGbOPV&index=1,

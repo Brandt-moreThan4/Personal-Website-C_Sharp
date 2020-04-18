@@ -9,17 +9,32 @@
         .pre-scrollable {
             max-height: 450px;
         }
+
+        .program-language {
+            font-size:x-large
+        }
+        .program-title {
+            font-size:large
+        }
+        .program-description {
+
+        }
+        .program-code {
+
+        }
+
     </style>
 </head>
 
 <h1>Programs</h1>
-<br />
+<br /> <br/>
 
 @foreach (var post in Model.programPosts)
 {
     <div>
-        <h4>@post.Title <span>--- @post.Language</span></h4>
-        <p>@post.Description</p>
+        <h1 class="program-language">@post.Language</h1>
+        <h2 class="program-title">@post.Title</h2>
+        <p class="program-description">@post.Description</p>
         <br />
 
         <pre class="pre-scrollable prettyprint">
