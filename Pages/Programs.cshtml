@@ -4,6 +4,14 @@
     ViewData["Title"] = "Programs";
 }
 
+<head>
+    <style>
+        .pre-scrollable {
+            max-height: 450px;
+        }
+    </style>
+</head>
+
 <h1>Programs</h1>
 <br />
 
@@ -13,10 +21,17 @@
         <h4>@post.Title <span>--- @post.Language</span></h4>
         <p>@post.Description</p>
         <br />
-        <p style="white-space:pre-wrap"> @post.Code</p>
+
+        <pre class="pre-scrollable prettyprint">
+            @post.Code
+        </pre>
+
     </div>
     <hr />
     <br />
     <br />
-
 }
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+

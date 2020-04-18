@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using System.Web;
+using System.Diagnostics;
 
 namespace FunWithBrandt.Models
 {
@@ -41,6 +42,33 @@ namespace FunWithBrandt.Models
             return records;
 
         }
+
+        public static string ReadCodeText(string fileName)
+        {
+            string tempString = string.Empty;
+            var path = Directory.GetCurrentDirectory() + @"\wwwroot\ProgramText\" + fileName + ".txt"; ;
+            var line = string.Empty;
+
+            if (File.Exists(path))
+            {
+                using (StreamReader sw = new StreamReader(path))
+                {
+                    tempString = sw.ReadToEnd();
+                    ////line = sw.ReadLine();
+                    //while (line != null)
+                    //{
+                    //    tempString += line;
+                    //}
+                }
+
+            }
+            else
+            {
+                Debug.Print("File Does not exist");
+            }
+            return tempString;
+        }
+
     }
     
 }
