@@ -4,7 +4,6 @@
     ViewData["Title"] = "Blog";
 }
 
-
 <head>
     <style>
         .blog {
@@ -16,7 +15,7 @@
         }
 
         .blog-title {
-            font-size:large;
+            font-size:small;
         }
 
         .blog-content {
@@ -26,15 +25,15 @@
     </style>
 </head>
 
-<h1>Prescription For Hindsight Bias</h1>
+<h1 class="text-center">Some Blog Title Here</h1>
 <br />
 
 
 @foreach (var post in Model.blogPosts)
 {
     <div class="blog">
-        <h1 class="blog-date">@post.Date</h1>
-        <h2 class="blog-title">@post.Title</h2>
+        <h1 class="blog-date">@post.Title</h1>
+        <h2 class="blog-title">@post.Date</h2>
         <br />
         @* Ideally at some point the below will be an iteration over a list peoprty fo rthe paragraphs or content. *@
         <p class="blog-content"> @post.Content</p>

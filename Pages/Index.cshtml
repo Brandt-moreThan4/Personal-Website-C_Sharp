@@ -14,20 +14,25 @@
             width: 85%;
         }
 
+        .carousel-image {
+            width:850px;
+            height:750px;
+        }
+
     </style>
 </head>
 
-<div class="text-center">
-    <h1>Well Hello</h1>
-</div>
-
 <div>
+    <h1 class="text-center">Well Hello</h1>
+
+
     <p>This is me. Join my world</p>
     <p> The prupose behind creating this website was threefold. </p>
 
-    <p>One I wanted to practice my C# skills and I needed a project
+    <p>
+        One I wanted to practice my C# skills and I needed a project
         Making this website has given me a whole bunch of problems to solve and in the process I had to learn
-        HTML, CSS, Bootstrap, Javascript, razor pages, how to store data (still working on that), how to call scripts from one 
+        HTML, CSS, Bootstrap, Javascript, razor pages, how to store data (still working on that), how to call scripts from one
         programming language to another which in this case is calling Python from C#.
     </p>
     <p>
@@ -35,14 +40,67 @@
         to see is a powerful motivator to create the best content possible
     </p>
     <p>
-        Third, I thought it would be fun to have a easily accessible place to store content that I care about. This is how the Book and 
+        Third, I thought it would be fun to have a easily accessible place to store content that I care about. This is how the Book and
         knowledge repository pages came to be. The book page will allow me to keep track of my reading and give commentary to my future self and others.
         Knowledge repository is intended to be just a storehouse for any sources of information that are useful or cool.
     </p>
     <br />
-    <p class="text-center"> This is me and these are the boys.</p>
 
-    <div id="imageWrapper">
-        <img src="~/Images/The Boys.jpg" />
-    </div>
+
+<br /><br />
 </div>
+    <h1 class="text-center" style="font-size:large">Beautiful Carousel Attempt</h1>
+    <p>Need to figure out how to make the pictures turn out better. I resized them with CSS to make them all the same size, but
+        that makes some weird distortions for certain pictures.
+    </p>
+    <div id="demo" class="carousel slide" data-ride="carousel" data-interval="6500">
+
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
+        </ul>
+
+        <div class="carousel-inner" @*style="width:100%; height:1000px;"*@>
+
+            <div class="carousel-item">
+                <img class="carousel-image" src="~/Images/The Boys.jpg"/>
+                <div class="carousel-caption">
+                    <h4>Boys will be boys</h4>
+                </div>
+            </div>
+
+            <div class="carousel-item active">
+                <img class="carousel-image" src="~/Images/lsuGraduation.jpg" />
+                <div class="carousel-caption">
+                    <h4>LSU Graduation</h4>
+                    <p>Just me and some clowns</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img class="carousel-image" src="~/Images/smartLabCFA.jpg" />
+                <div class="carousel-caption">
+                    <h4>Trec Meat</h4>
+                    <p>OVER 9000!!!!!</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img class="carousel-image" src="~/Images/magicMike.jpg" />
+                <div class="carousel-caption">
+                    <h4>Magic Mike</h4>
+                    <p>Late night work with the boys</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>

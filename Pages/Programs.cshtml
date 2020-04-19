@@ -11,23 +11,35 @@
         }
 
         .program-language {
-            font-size:x-large
+            font-size: x-large
         }
+
         .program-title {
-            font-size:large
+            font-size: large
         }
+
         .program-description {
-
         }
+
         .program-code {
-
         }
-
     </style>
 </head>
 
-<h1>Programs</h1>
-<br /> <br/>
+<h1 class="text-center">Programs</h1>
+<br /><br />
+<p>
+    This page can be just a storehouse for programs. I already am using google's code prettify javascript to add 
+    some syntax highlighting for the code blocks, but perhaps I should look at other possibilities. Right now it 
+    incorrectly assumes vba comments are strings so I have to remove all comments from the vba which is annoying.
+    I would like to test other prettify themes or maybe use another syntax highlighter.
+</p>
+<p>
+    How should this page be formatted? I think I would like some sort of color coding for different programming languages.
+    Should I move the language label to just be small text right above the code block? Or to the right somehwere? Formatting for title 
+    and description blocks?
+</p>
+<br /><br />
 
 @foreach (var post in Model.programPosts)
 {
