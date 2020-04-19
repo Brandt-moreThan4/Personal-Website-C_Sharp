@@ -35,7 +35,7 @@
             <th>Person</th>
             <th>Institution</th>
             <th>Description</th>
-            <th>Source</th>
+            @*<th>Source</th>*@
             <th>Keywords</th>
         </tr>
     </thead>
@@ -46,8 +46,8 @@
             <tr>
                 <td>@record.Person</td>
                 <td>@record.Institution</td>
-                <td>@record.Description</td>
-                <td><a href=@record.Source>@record.Source</a></td>
+                @*<td>@record.Description</td>*@
+                <td><a href=@record.Source>@record.Description</a></td>
                 <td>@record.Keywords</td>
             </tr>
         }
