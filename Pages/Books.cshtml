@@ -4,11 +4,54 @@
     ViewData["Title"] = "Books";
 }
 
-<h1>Books</h1>
-<br /><br />
 
-<p>This page is coming soon. It's a big project and I'll be modeling it off of 
+<head>
+    <style>
+        img {
+            width: 250px;
+            height: 325px;
+        }
+
+        .row {
+        }
+    </style>
+</head>
+
+<h1>Books</h1>
+<br />
+<br />
+
+<p>
+    This page is coming soon. It's a big project and I'll be modeling it off of
     <a href="https://www.gatesnotes.com/Books">Bill Gates' blog</a>
     because I think his looks pretty cool.
-    </p>
+</p>
 
+<br />
+
+<div class="row">
+    <span class="col-1"></span>
+    <img class="img-thumbnail col-3" src="~/Images/Books/Uncertain World.jpg" />
+    <img class="img-thumbnail col-3" src="~/Images/Books/BenFranklin.jpg" />
+    <img class="img-thumbnail col-3" src="~/Images/Books/RichardFeynman.jpg" />
+</div>
+
+<br />
+
+<div class="row">
+    <span class="col-1"></span>
+    <img class="img-thumbnail col-3" src="~/Images/Books/AntiFragile.jpg" />
+    <img class="img-thumbnail col-3" src="~/Images/Books/StressTest.jpg" />
+</div>
+
+
+
+@*<div class="img-thumbnail col-3">
+    <img src="~/Images/Books/Uncertain World.jpg" />
+    <div>
+        <p>
+            Bob Rubin is a swell guy. More words here. Brief Description or review? But I think all books need either a description here.
+            Lot more effort, but should clicking on image to you to another page with more info?
+        </p>
+    </div>
+</div>*@  
