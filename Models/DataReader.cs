@@ -54,11 +54,7 @@ namespace FunWithBrandt.Models
                 using (StreamReader sw = new StreamReader(path))
                 {
                     tempString = sw.ReadToEnd();
-                    ////line = sw.ReadLine();
-                    //while (line != null)
-                    //{
-                    //    tempString += line;
-                    //}
+
                 }
 
             }

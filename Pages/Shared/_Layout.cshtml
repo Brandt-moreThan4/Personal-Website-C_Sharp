@@ -27,14 +27,21 @@
             background-color: rgb(253,208,35);
         }
 
-        .container main {
+        /*.container-fluid main {
+            background-color: #fff;
+            padding: 5px;
+        }*/
+
+        #mainContent {
             background-color: #fff;
             padding: 5px;
         }
 
-        /*.navbar-toggleable-sm .navbar-toggler-icon {
-            background-color:white;
-        }*/
+        .left-nav {
+            background-color: rgb(253,208,35);
+            height:500px;
+        }
+
     </style>
 
 </head>
@@ -78,30 +85,14 @@
         </nav>
     </header>
 
-
-    <div class="row">
-        <div class="col-2">
-            <div style="background-color:rgb(253,208,35); height:500px;">
-                <ul>
-                    <li>I could also</li>
-                    <li>put some sort of </li>
-                    <li>content over here?</li>
-                </ul>
-                <br /><br />
-                <ul>
-                    <li>I have no idea what, but</li>
-                    <li>I feel like it just looks better?</li>
-                </ul>
+        <div class="container">
+            <div class="row">
+                <main id="mainContent" role="main" class="pb-3 col-12">
+                    @RenderBody()
+                </main>
             </div>
         </div>
 
-        <div class="container col-8" id="mainContent">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-
-    </div>
 
     <footer class="border-top footer">
         <div class="container">
