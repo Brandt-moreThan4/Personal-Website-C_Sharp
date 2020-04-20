@@ -4,21 +4,48 @@
     ViewData["Title"] = "Blog";
 }
 
-<h1>Prescription For Hindsight Bias</h1>
-<br />
+<head>
+    <style>
+        .blog {
 
+        }
+
+        .blog-date {
+            font-size: x-large;
+        }
+
+        .blog-title {
+            font-size:small;
+        }
+
+        .blog-content {
+
+        }
+
+    </style>
+</head>
+
+<h1 class="text-center">Some Blog Title Here</h1>
+<br />
+<button onclick="message()" type="button" class="btn btn-primary">Click Me</button>
 
 @foreach (var post in Model.blogPosts)
 {
-    <div class="BlogPost">
-        <h4 class="BlogDate">@post.Date</h4>
-        <span class="BlogTitle">@post.Title</span>
+    <div class="blog">
+        <h1 class="blog-date">@post.Title</h1>
+        <h2 class="blog-title">@post.Date</h2>
         <br />
         @* Ideally at some point the below will be an iteration over a list peoprty fo rthe paragraphs or content. *@
-        <p class="BlogContent"> @post.Content</p>
+        <p class="blog-content"> @post.Content</p>
     </div>
     <hr />
     <br />
     <br />
 
 }
+
+<script>
+    function message() {
+        alert("OMG I can't believe you did that. You're name must me Michael Hubbell. How embarassing!!!!!");
+    }
+</script>

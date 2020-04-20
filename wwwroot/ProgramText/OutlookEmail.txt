@@ -1,0 +1,23 @@
+﻿
+Sub OutlookEMail()
+
+    Dim outlookApp As Object, outlookMail As Object, signature As String
+
+
+    Set outlookApp = CreateObject("outlook.application")
+    Set outlookMail = outlookApp.CreateItem(0)
+    
+    
+    With outlookMail
+        .Display
+        signature = outlookMail.htmlbody
+        .To = "bgreen3@strategiccomp.com"
+        .Subject = "fun subject here"
+        .htmlbody = "Some content here" & vbNewLine & signature
+    End With
+    
+
+    Set outlookApp = Nothing
+    Set outlookMail = Nothing
+
+End Sub

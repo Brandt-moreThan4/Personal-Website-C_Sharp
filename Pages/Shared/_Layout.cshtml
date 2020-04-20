@@ -6,10 +6,47 @@
     <title>@ViewData["Title"] - FunWithBrandt</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="icon" href="~/Images/LSUTiger.png" />
+
+    <style>
+        .tiger-logo {
+            width: 40px;
+            height: 40px;
+            margin: 10px 10px 0px 10px;         
+        }
+
+        .logo-container {
+            float:left;
+        }
+
+        .nav-link a {
+            color:white;
+        }
+
+        header {
+            background-color: rgb(253,208,35);
+        }
+
+        .container main {
+            background-color: #fff;
+            padding: 5px;
+        }
+
+        /*.navbar-toggleable-sm .navbar-toggler-icon {
+            background-color:white;
+        }*/
+    </style>
+
 </head>
+
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <a class="logo-container" asp-area="" asp-page="/Index">
+            <img class="tiger-logo" src="~/Images/LSUTiger.png" />
+        </a>
+        @*navbar-light bg-white*@
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -18,37 +55,57 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link" style="color:white" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Blog">Blog</a>
+                            <a class="nav-link" style="color:white" asp-area="" asp-page="/Blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Books">Books</a>
+                            <a class="nav-link" style="color:white" asp-area="" asp-page="/Books">Books</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Programs">Programs</a>
+                            <a class="nav-link" style="color:white" asp-area="" asp-page="/Programs">Programs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Graphs">Graphs</a>
+                            <a class="nav-link" style="color:white" asp-area="" asp-page="/Graphs">Graphs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KnowledgeRepository">Knowledge Repository</a>
+                            <a class="nav-link" style="color:white" asp-area="" asp-page="/KnowledgeRepository">Knowledge Repository</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+
+    <div class="row">
+        <div class="col-2">
+            <div style="background-color:rgb(253,208,35); height:500px;">
+                <ul>
+                    <li>I could also</li>
+                    <li>put some sort of </li>
+                    <li>content over here?</li>
+                </ul>
+                <br /><br />
+                <ul>
+                    <li>I have no idea what, but</li>
+                    <li>I feel like it just looks better?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container col-8" id="mainContent">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
-            &copy; 2020 - FunWithBrandt - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2020 - FunWithBrandt
         </div>
     </footer>
 

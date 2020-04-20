@@ -12,10 +12,11 @@ namespace FunWithBrandt
     {
         public void OnGet()
         {
-
+            
         }
 
         public List<ProgramPost> programPosts = new List<ProgramPost>
+
         {
             new ProgramPost{
                 Title = "Coloy-Coordinate Finder",
@@ -24,56 +25,24 @@ namespace FunWithBrandt
                                 hover your mouse over the area in question. This script runs continuously until interrupted with the control + c keyboard command.
                                 You may have issued with dual monitors as I have it crash on me before.",
 
-                Code = @"# -*- coding: utf-8 -*-
-
-                            #This script can be used to help figure out x,y coordinates and RGB numbers.
-                            #Just run it and hover your mouse over the spot you need info on
-                            # press ctrl + c over the console to quit
-
-                            import pyautogui
-                            import time
-
-                            try:
-                                while True:
-                                    x, y = pyautogui.position()
-                                    positionStr = 'X: ' + str(x).rjust(4) + ' Y: ' + str(y).rjust(4)
-                                    pixelColor = pyautogui.screenshot().getpixel((x, y))
-                                    positionStr += ' RGB: (' + str(pixelColor[0]).rjust(3)
-                                    positionStr += ', ' + str(pixelColor[1]).rjust(3)
-                                    positionStr += ', ' + str(pixelColor[2]).rjust(3) + ')'
-                                    print(positionStr)
-                                    time.sleep(3)
-                            except KeyboardInterrupt:
-                                print('\nDone.')"
+                Code = DataReader.ReadCodeText("CoordinateColors")
             },
 
             new ProgramPost{
                 Title = "Outlook Email",
                 Language = "VBA",
-                Description = @"Basic sub to create an outlook email without sending it.",
+                Description = @"Basic sub to create an outlook email without sending it. Now that I am looking at this though, this should definitely just be a function
+                                with the email inputs as parameters.",
 
-                Code = @"Sub OutlookMail()
+                Code = DataReader.ReadCodeText("OutlookEmail")
+            },
 
-                        Dim outlookApp As Object, outlookMail As Object, signature As String
-
-                            Set outlookApp = CreateObject('outlook.application')
-                            Set outlookMail = outlookApp.CreateItem(0)
-
-                            With outlookMail
-                                .Display
-                                 signature = outlookMail.htmlbody 
-                                .To = 'bgreen3@stategiccomp.com'
-                                .Subject = 'Whatver your Subject is'
-                                .htmlbody = vbNewLine & signature
-                            End With
-
-
-                            outlookMail.Close 1
-
-                            Set outlookApp = Nothing
-                            Set outlookMail = Nothing
-
-                        End Sub"
+            new ProgramPost{
+                Title = "VBA Utilities",
+                Language = "VBA",
+                Description = @"Here are a few vba subs and functions which I use all the time. Most don't seem to fancy, but are extremely useful 
+                                to reduce repitition adn increase readability in larger programs.",
+                Code = DataReader.ReadCodeText("VBA Utils")
             },
 
         };
