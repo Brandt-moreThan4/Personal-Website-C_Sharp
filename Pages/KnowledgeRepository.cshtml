@@ -8,44 +8,78 @@
 <style>
 
     .table-hover tbody tr:hover {
-         background-color: #e6f7ff;
-}
-    /* only using this because i can't find .table-condensed*/
-    .table tr td{
-        padding:5px;
+        background-color: rgb(179, 224, 255);
     }
 
-    h1 {
-        font-size:xx-large;
-    }
-
+    /*h1 {
+        font-size: xx-large;
+    }*/
 </style>
 
-<h1>KnowledgeRepository</h1>
+<h2>Knowledge Repository</h2>
 
 <br />
-<p>My beautiful table of learning. I would love additional entries so hit me up with other sources.
-    Also going to add a search/filter funcationality at some point.    
+<p>
+    My beautiful table of learning. I would love additional entries so hit me up with other sources.
+    Also going to add a search/filter funcationality at some point.
 </p>
+
+<form method="post">
+    <button formmethod="post" type="submit" class="btn btn-success">For Hubbell</button>
+</form>
 <br />
-<table class="table table-responsive table-striped table-bordered table-hover">
+
+@{ if (Model.ShowHubbel)
+    {
+        <p>
+            I think the two columns looks weird. I think I need a third for something? Or I could just play with it more
+            to make it look prettier I guess. Also I'm thinking I would like to have an extended description somehwere with like
+            more detailed notes. Not really sure where that should go.
+        </p>
+
+        <p>
+            I think figuring out a way to categorize these may be a lot more involved than I was thinking.
+            Also another cool thing I think would be to have "learning tracks" with instructions and links to
+            follow a pre-defined path. Possible options : Valutation, programming, web development, statistics,
+            data analysis, web scraping, machine learning.
+
+        </p>
+    }
+
+}
+
+
+<br />
+<table class="table table-responsive table-striped table-bordered table-hover table-sm">
 
     <thead>
         <tr>
             <th>Person/Institution</th>
             <th>Description</th>
-            @*<th>Keywords</th>*@
+            @{
+                if (!Model.ShowHubbel)
+                {
+                    <th>Keywords</th>
+                }
+            }
         </tr>
     </thead>
 
     <tbody>
         @foreach (var record in Model.knowledgeRecords)
         {
-            <tr>
-                <td>@record.Person</td>
-                <td><a href=@record.Source>@record.Description</a></td>
-                @*<td>@record.Keywords</td>*@
-            </tr>
+        <tr>
+            <td>@record.Person</td>
+            <td><a href=@record.Source>@record.Description</a></td>
+
+            @{
+                if (!Model.ShowHubbel)
+                {
+                    <td>@record.Keywords</td>
+                }
+            }
+
+        </tr>
         }
     </tbody>
 

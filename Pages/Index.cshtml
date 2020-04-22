@@ -6,13 +6,10 @@
 
 <head>
     <style>
-        #imageWrapper {
-            margin-left: 45px;
-        }
 
-            #imageWrapper img {
-                width: 85%;
-            }
+        .welcome-text {
+            /*max-width:900px;*/
+        }
 
         .carousel-image {
             width: 850px;
@@ -23,12 +20,32 @@
 
 
 
-<div>
-    <div>
-        <h1 class="text-center">Well Hello</h1>
+<div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert">
+        x
+    </button>
+    This website is currently under development. Don't judge it to harshly for being shitty
+</div>
 
+<div class="row">
+    <div class="col">
+        <h1 class="text-center">Welcome</h1>
+        <p>
+            Hubbell: Should I have this top part be an "About Me" section and then the bottom be a "Website Architecture"
+            section which has why I made it and stuff? Or something that sounds less douchey. 
+            Or should I have that be a separate tab? Or do I just not need that? I kind of feel like the idea of a really short bio
+            ,but if it's too short then I think this page will look bad.
+        </p>
+    </div>
+</div>
 
-        <p>This is me. Join my world</p>
+<button class="btn btn-success btn-group-lg d-none d-lg-block">Big Screen Only</button>
+
+<br /><br />
+
+<div class="row">
+    <div class="welcome-text col-9">
+        
         <p> The purpose behind creating this website was threefold. </p>
 
         <p>
@@ -46,18 +63,25 @@
             knowledge repository pages came to be. The book page will allow me to keep track of my reading and give commentary to my future self and others.
             Knowledge repository is intended to just be a storehouse for any sources of information that are useful or cool.
         </p>
-        <br />
     </div>
+
+    <div class="col-2">
+        <img style="width:250px; height:300px;" src="~/Images/lsuGraduation.jpg" />
+    </div>
+
+
 
 </div>
 
- 
+
+<br />
+<br />
+<hr />
+<br />
 <br />
 
 <div class="row">
     <div class="col offset-1">
-        <hr />
-        <br /><br />
         <h1 class="text-center" style="font-size:large">Beautiful Carousel Attempt</h1>
         <p>
             Need to figure out how to make the pictures turn out better. I resized them with CSS to make them all the same size, but
@@ -94,17 +118,10 @@
                     </div>
                 </div>
 
-                @*<div class="carousel-item">
-                    <img class="carousel-image rounded" src="~/Images/magicMike.jpg" />
-                    <div class="carousel-caption">
-                        <h4>Magic Mike</h4>
-                        <p>Late night work with the boys</p>
-                    </div>
-                </div>*@
-
             </div>
         </div>
 
+        @*for some reason these look trash*@
         <a class="carousel-control-prev" href="#demo" data-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </a>
