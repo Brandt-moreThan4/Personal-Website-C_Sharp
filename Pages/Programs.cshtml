@@ -6,6 +6,11 @@
 
 <head>
     <style>
+        .language-logo {
+            width:45px;
+            height:45px;
+        }
+
         .pre-scrollable {
             max-height: 450px;
         }
@@ -26,38 +31,132 @@
     </style>
 </head>
 
-<h1 class="text-center">Programs</h1>
-<br /><br />
-<p>
-    This page can be just a storehouse for programs. I already am using google's code prettify javascript to add 
-    some syntax highlighting for the code blocks, but perhaps I should look at other possibilities. Right now it 
-    incorrectly assumes vba comments are strings so I have to remove all comments from the vba which is annoying.
-    I would like to test other prettify themes or maybe use another syntax highlighter.
-</p>
-<p>
-    How should this page be formatted? I think I would like some sort of color coding for different programming languages.
-    Should I move the language label to just be small text right above the code block? Or to the right somehwere? Formatting for title 
-    and description blocks?
-</p>
-<br /><br />
-
-@foreach (var post in Model.programPosts)
+<h2 class="text-center">Programs</h2>
+<form method="post">
+    <button formmethod="post" type="submit" class="btn btn-light">For Hubbell</button>
+</form>
+@if (Model.ShowHubbel)
 {
-    <div>
-        <h1 class="program-language">@post.Language</h1>
-        <h2 class="program-title">@post.Title</h2>
-        <p class="program-description">@post.Description</p>
-        <br />
-
-        <pre class="pre-scrollable prettyprint">
-            @post.Code
-        </pre>
-
-    </div>
-    <hr />
-    <br />
-    <br />
+    <p>
+        I am still leaning towards some sort of color coding. You think I can use their logo? Where should I put it?
+        Formatting for title and description blocks?
+    </p>
 }
+<br />
+<br />
+
+<p>
+    Follow me on GitHub: <a href="https://github.com/Brandt-moreThan4">https://github.com/Brandt-moreThan4 </a>
+</p>
+<br />
+<p>
+    I don't have anything cool on there yet other
+    than the source code for this website, but I would like to get going.
+</p>
+
+<br />
+
+
+@* Dynamic navigation tab. I don't know how it works, but I think it uses bootstrap's javascript. *@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="Python-tab" data-toggle="tab" href="#Python" role="tab" aria-controls="Python" aria-selected="true">Python</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="CSharp-tab" data-toggle="tab" href="#CSharp" role="tab" aria-controls="CSharp" aria-selected="false">CSharp</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="VBA-tab" data-toggle="tab" href="#VBA" role="tab" aria-controls="VBA" aria-selected="false">VBA</a>
+    </li>
+</ul>
+
+
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="Python" role="tabpanel" aria-labelledby="Python-tab">
+        <div>
+            <img class="language-logo" src="~/Images/LanguageLogos/Python.png" />
+        </div>
+        @foreach (var post in Model.programPosts)
+        {
+            if (post.Language == "Python")
+            {
+
+
+                <div>
+                    @*<h1 class="program-language">@post.Language</h1>*@
+                    <h2 class="program-title">@post.Title</h2>
+                    <p class="program-description">@post.Description</p>
+                    <br />
+
+                    <pre class="pre-scrollable prettyprint">
+                    @post.Code
+                </pre>
+
+                </div>
+                <hr />
+                <br />
+                <br />
+
+            }
+        }
+    </div>
+    <div class="tab-pane fade" id="CSharp" role="tabpanel" aria-labelledby="CSharp-tab">
+        <div>
+            <img class="language-logo" src="~/Images/LanguageLogos/CSharp.png" />
+        </div>
+        @foreach (var post in Model.programPosts)
+        {
+            if (post.Language == "C#")
+            {
+
+
+                <div>
+                    <h1 class="program-language">@post.Language</h1>
+                    <h2 class="program-title">@post.Title</h2>
+                    <p class="program-description">@post.Description</p>
+                    <br />
+
+                    <pre class="pre-scrollable prettyprint">
+                    @post.Code
+                </pre>
+
+                </div>
+                <hr />
+                <br />
+                <br />
+
+            }
+        }
+    </div>
+
+    <div class="tab-pane fade" id="VBA" role="tabpanel" aria-labelledby="VBA-tab">
+        <br />
+        @foreach (var post in Model.programPosts)
+        {
+            if (post.Language == "VBA")
+            {
+
+
+                <div>
+                    @*<h1 class="program-language">@post.Language</h1>*@
+                    <h2 class="program-title">@post.Title</h2>
+                    <p class="program-description">@post.Description</p>
+                    <br />
+
+                    <pre class="pre-scrollable prettyprint">
+                    @post.Code
+                </pre>
+
+                </div>
+                <hr />
+                <br />
+                <br />
+
+            }
+        }
+    </div>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 

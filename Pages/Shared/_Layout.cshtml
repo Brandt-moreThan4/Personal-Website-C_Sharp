@@ -2,39 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>@ViewData["Title"] - FunWithBrandt</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="icon" href="~/Images/LSUTiger.png" />
-
+    
     <style>
-        .tiger-logo {
-            width: 40px;
-            height: 40px;
-            margin: 10px 10px 0px 10px;         
-        }
 
-        .logo-container {
-            float:left;
-        }
-
-        .nav-link a {
-            color:white;
-        }
 
         header {
-            background-color: rgb(253,208,35);
+            background-color: rgb(179, 224, 255);
         }
 
-        .container main {
-            background-color: #fff;
-            padding: 5px;
-        }
-
-        /*.navbar-toggleable-sm .navbar-toggler-icon {
-            background-color:white;
-        }*/
     </style>
 
 </head>
@@ -42,9 +21,7 @@
 
 <body>
     <header>
-        <a class="logo-container" asp-area="" asp-page="/Index">
-            <img class="tiger-logo" src="~/Images/LSUTiger.png" />
-        </a>
+
         @*navbar-light bg-white*@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
@@ -53,24 +30,24 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1 navbar-right justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link" style="color:white" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link" style="color:black" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color:white" asp-area="" asp-page="/Blog">Blog</a>
+                            <a class="nav-link"  style="color:black" asp-area="" asp-page="/Blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color:white" asp-area="" asp-page="/Books">Books</a>
+                            <a class="nav-link"  style="color:black" asp-area="" asp-page="/Books">Books</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color:white" asp-area="" asp-page="/Programs">Programs</a>
+                            <a class="nav-link"  style="color:black" asp-area="" asp-page="/Programs">Programs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color:white" asp-area="" asp-page="/Graphs">Graphs</a>
+                            <a class="nav-link" style="color:black" asp-area="" asp-page="/Graphs">Graphs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color:white" asp-area="" asp-page="/KnowledgeRepository">Knowledge Repository</a>
+                            <a class="nav-link" style="color:black" asp-area="" asp-page="/KnowledgeRepository">Knowledge Repository</a>
                         </li>
                     </ul>
                 </div>
@@ -78,30 +55,14 @@
         </nav>
     </header>
 
-
-    <div class="row">
-        <div class="col-2">
-            <div style="background-color:rgb(253,208,35); height:500px;">
-                <ul>
-                    <li>I could also</li>
-                    <li>put some sort of </li>
-                    <li>content over here?</li>
-                </ul>
-                <br /><br />
-                <ul>
-                    <li>I have no idea what, but</li>
-                    <li>I feel like it just looks better?</li>
-                </ul>
+        <div class="container">
+            <div @*class="row"*@>
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
             </div>
         </div>
 
-        <div class="container col-8" id="mainContent">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-
-    </div>
 
     <footer class="border-top footer">
         <div class="container">

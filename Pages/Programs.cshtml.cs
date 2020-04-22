@@ -12,7 +12,14 @@ namespace FunWithBrandt
     {
         public void OnGet()
         {
-            
+
+        }
+
+        public bool ShowHubbel;
+        public IActionResult OnPost()
+        {
+            ShowHubbel = true;
+            return Page();
         }
 
         public List<ProgramPost> programPosts = new List<ProgramPost>
@@ -44,6 +51,8 @@ namespace FunWithBrandt
                                 to reduce repitition adn increase readability in larger programs.",
                 Code = DataReader.ReadCodeText("VBA Utils")
             },
+
+
 
         };
 

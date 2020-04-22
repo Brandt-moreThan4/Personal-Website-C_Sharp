@@ -7,7 +7,7 @@
 <head>
     <style>
         .blog {
-
+            max-width:900px;
         }
 
         .blog-date {
@@ -26,26 +26,20 @@
 </head>
 
 <h1 class="text-center">Some Blog Title Here</h1>
-<br />
-<button onclick="message()" type="button" class="btn btn-primary">Click Me</button>
+<br /><br />
 
-@foreach (var post in Model.blogPosts)
-{
-    <div class="blog">
-        <h1 class="blog-date">@post.Title</h1>
-        <h2 class="blog-title">@post.Date</h2>
-        <br />
-        @* Ideally at some point the below will be an iteration over a list peoprty fo rthe paragraphs or content. *@
-        <p class="blog-content"> @post.Content</p>
+<div class="row">
+    <div class="col-10">
+         @foreach (var post in Model.blogPosts) { <div class="blog">
+                <h1 class="blog-date">@post.Title</h1>
+                <h2 class="blog-title">@post.Date</h2>
+                <br />
+                <p class="blog-content"> @post.Content</p>
+            </div>
+            <hr />
+            <br />
+            <br />
+
+        }
     </div>
-    <hr />
-    <br />
-    <br />
-
-}
-
-<script>
-    function message() {
-        alert("OMG I can't believe you did that. You're name must me Michael Hubbell. How embarassing!!!!!");
-    }
-</script>
+</div>

@@ -21,5 +21,13 @@ namespace FunWithBrandt.Pages
         {
 
         }
+
+        public bool ShowHubbel;
+        public IActionResult OnPost()
+        {
+            ShowHubbel = true;
+            return Page();
+        }
+
     }
 }

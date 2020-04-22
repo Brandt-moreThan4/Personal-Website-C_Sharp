@@ -1,27 +1,30 @@
-﻿Aswath Damodaran,NYU,Domadoran's website,http://pages.stern.nyu.edu/~adamodar/,Finance
-Robert Shiller,Yale,Shiller's open courses,http://www.econ.yale.edu/~shiller/,Finance
-Howard Marks,Oak Tree Capital,Memo's written by Marks,https://www.oaktreecapital.com/insights/howard-marks-memos,Finance
-Warren Buffet,Berkshire Hathaway,Berkshire's shareholder letters,https://www.berkshirehathaway.com/letters/letters.html,Finance
-,FRED,St. Louis Federal Reserve Bank Data,https://fred.stlouisfed.org/,Finance;Data
-,Oshaughnessy Asset Management,OSAM's blog and free research,https://www.osam.com/Commentary,Finance
-,U.S Government,Historical Outstanding Debt,https://treasurydirect.gov/govt/reports/pd/histdebt/histdebt_histo5.htm,Finance;Debt;Government
+﻿Aswath Damodaran,,Domadoran's website,http://pages.stern.nyu.edu/~adamodar/,Finance
+Robert Shiller,,Shiller's open courses,http://www.econ.yale.edu/~shiller/,Finance
+Howard Marks,,Memo's written by Marks,https://www.oaktreecapital.com/insights/howard-marks-memos,Finance
+Berkshire Hathaway,,Berkshire's shareholder letters,https://www.berkshirehathaway.com/letters/letters.html,Finance
+FRED,,St. Louis Federal Reserve Bank Data,https://fred.stlouisfed.org/,Finance;Data
+Oshaughnessy Asset Management,,OSAM's blog and free research,https://www.osam.com/Commentary,Finance
+U.S Government,,Historical Outstanding Debt,https://treasurydirect.gov/govt/reports/pd/histdebt/histdebt_histo5.htm,Finance;Debt;Government
 Al Sweigart,,"Free Python Tutorial for the book ""Automate The Boring Stuff With Python""",https://automatetheboringstuff.com/,Programming;Python
-,,Amazing source to learn how to code,https://www.w3schools.com/,Programming
+W3Schools,,Amazing source to learn how to code,https://www.w3schools.com/,Programming
 Bill Gates,,Gates' Book Blog,https://www.gatesnotes.com/Books,Books
-Sal Khan,Khan Academy,The best educator to ever exists,https://www.khanacademy.org/,General Learning
-Wes Gray; Jack Vogel,Alpha Architect,Alpha Architect's blog &Research,https://alphaarchitect.com/blog/,Finance;Quanitative
-,U.S Government,U.S Government's Financial Report,https://fiscal.treasury.gov/reports-statements/financial-report/,Finance;Government
-John Geanakoplos,Yale,John's Financial Theory Course,https://oyc.yale.edu/economics/econ-251,Finance
-Aswath Damodaran,NYU,Damodaran's blog,http://aswathdamodaran.blogspot.com/,Finance;Blog
-Josh Brown,Ritholtz Wealth Management,Josh's Blog,https://thereformedbroker.com/,Finance;Blog
-Michael Mauboussin,Credit Suisse,Michael's research papers,https://drive.google.com/drive/folders/1z7-wp4S5r4AaYOvmjaA1Vxcfq3IwDPQL?usp=drive_open,Finance
+Khan Academy,,The best educator to ever exists,https://www.khanacademy.org/,General Learning
+Alpha Architect,,Alpha Architect's blog &Research,https://alphaarchitect.com/blog/,Finance;Quanitative
+U.S Government,,U.S Government's Financial Report,https://fiscal.treasury.gov/reports-statements/financial-report/,Finance;Government
+John Geanakoplos,,John's Financial Theory Course,https://oyc.yale.edu/economics/econ-251,Finance
+Aswath Damodaran,,Damodaran's blog,http://aswathdamodaran.blogspot.com/,Finance;Blog
+Josh Brown,,Josh's Blog,https://thereformedbroker.com/,Finance;Blog
+Michael Mauboussin,,Michael's research papers,https://drive.google.com/drive/folders/1z7-wp4S5r4AaYOvmjaA1Vxcfq3IwDPQL?usp=drive_open,Finance
 Warren Buffet,,All Warren Buffet writings,https://t.co/hlCWrbFVRj?ssr=true,Finance
-,,Amazing Speeches,https://jamesclear.com/great-speeches,Speeches
-Chris Dixon,,,https://cdixon.org/blog/2,Blog
-Eugene Wei,,,https://www.eugenewei.com/,Blog
-,,,https://medium.com/@matthewclifford,Blog
-,,Free video VBA course,https://www.youtube.com/channel/UC7Iuuzc5sK1ZwcIBxiNQJfQ,Programming
-,Federal Reserve,U.S Household Wealth Data,https://www.federalreserve.gov/apps/fof/DisplayTable.aspx?t=b.101.h,Finance
-,UCI,Machine learning data sets,https://archive.ics.uci.edu/ml/index.php,Programming;Data
-,,Razor Pages Tutorial,https://www.learnrazorpages.com/,Programming;C#;Web Development
-,,Razor Pages Video Tutorials,https://www.youtube.com/watch?v=3F9SpUYTB6Y&list=PL6n9fhu94yhX6J31qad0wSO1N_rgGbOPV&index=1,
+James Clear,,Amazing Speeches,https://jamesclear.com/great-speeches,Speeches
+Chris Dixon,,Chris's Blog,https://cdixon.org/blog/2,Blog
+Eugene Wei,,Eugene's Blog,https://www.eugenewei.com/,Blog
+Matthew Clifford,,Matthew's Blog,https://medium.com/@matthewclifford,Blog
+Youtube Guy,,Free video VBA course,https://www.youtube.com/channel/UC7Iuuzc5sK1ZwcIBxiNQJfQ,Programming
+Federal Reserve,,U.S Household Wealth Data,https://www.federalreserve.gov/apps/fof/DisplayTable.aspx?t=b.101.h,Finance
+UCI,,Machine learning data sets,https://archive.ics.uci.edu/ml/index.php,Programming;Data
+Learn Razor Pages,,Razor Pages Tutorial,https://www.learnrazorpages.com/,Programming;C#;Web Development
+Kudvenkat,,Razor Pages Video Tutorials,https://www.youtube.com/watch?v=3F9SpUYTB6Y&list=PL6n9fhu94yhX6J31qad0wSO1N_rgGbOPV&index=1,
+Tim Corey,,C# Tutorials,https://www.youtube.com/channel/UC-ptWR16ITQyYOglXyQmpzw,Programming; C#
+Bootstrap,,Bootstrap Documentation: The best documentation I've ever seen.,https://getbootstrap.com/,Programming; Web Development
+Beautiful Soup,,Beautiful Soup Documentation,https://www.crummy.com/software/BeautifulSoup/bs4/doc/,Programming;Data;Python

@@ -24,6 +24,7 @@ namespace FunWithBrandt
         {
             var allPosts = new List<BlogPost>();
 
+
             allPosts.Add(new BlogPost()
             {
                 Date = "February 9, 2020",
@@ -83,8 +84,6 @@ namespace FunWithBrandt
                             truce has been established and for a time after that all soldiers would fight on to prevent the wrath
                             of commanding officers, but shoot poorly aimed shots with no intent to kill."
             });
-
-
 
             return allPosts;
         }

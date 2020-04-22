@@ -11,11 +11,19 @@ namespace FunWithBrandt
     public class KnowledgeRepositoryModel : PageModel
     {
         public List<KnowledgeRecord> knowledgeRecords;
-
+        public bool ShowHubbel;
 
         public void OnGet()
         {
             knowledgeRecords = DataReader.KnowledgeRead();
         }
+
+        public  IActionResult OnPost()
+        {
+            ShowHubbel = true;
+            knowledgeRecords = DataReader.KnowledgeRead();
+            return Page();
+        }
+
     }
 }
