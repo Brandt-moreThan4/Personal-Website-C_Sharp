@@ -26,18 +26,20 @@
 </head>
 
 <h1 class="text-center">Some Blog Title Here</h1>
-<br />
+<br /><br />
 
-@foreach (var post in Model.blogPosts)
-{
-    <div class="blog">
-        <h1 class="blog-date">@post.Title</h1>
-        <h2 class="blog-title">@post.Date</h2>
-        <br />
-        <p class="blog-content"> @post.Content</p>
+<div class="row">
+    <div class="col-10">
+         @foreach (var post in Model.blogPosts) { <div class="blog">
+                <h1 class="blog-date">@post.Title</h1>
+                <h2 class="blog-title">@post.Date</h2>
+                <br />
+                <p class="blog-content"> @post.Content</p>
+            </div>
+            <hr />
+            <br />
+            <br />
+
+        }
     </div>
-    <hr />
-    <br />
-    <br />
-
-}
+</div>

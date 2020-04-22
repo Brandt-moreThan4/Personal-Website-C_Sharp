@@ -15,6 +15,13 @@ namespace FunWithBrandt
 
         }
 
+        public bool ShowHubbel;
+        public IActionResult OnPost()
+        {
+            ShowHubbel = true;
+            return Page();
+        }
+
         public List<ProgramPost> programPosts = new List<ProgramPost>
 
         {

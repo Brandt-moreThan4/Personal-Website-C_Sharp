@@ -11,45 +11,119 @@
             width: 250px;
             height: 325px;
         }
-
     </style>
 </head>
 
 <h1>Books</h1>
+<form method="post">
+    <button formmethod="post" type="submit" class="btn btn-light">For Hubbell</button>
+</form>
+
 <br />
 <br />
+<br />
+
 
 <p>
     This page is coming soon. It's a big project and I'll be modeling it off of
     <a href="https://www.gatesnotes.com/Books">Bill Gates' blog</a>
     because I think his looks pretty cool.
 </p>
-
 <br />
 
-<div class="row">
-    <span class="col-1"></span>
-    <img class="img-thumbnail col-3" src="~/Images/Books/Uncertain World.jpg" />
-    <img class="img-thumbnail col-3" src="~/Images/Books/BenFranklin.jpg" />
-    <img class="img-thumbnail col-3" src="~/Images/Books/RichardFeynman.jpg" />
-</div>
 
-<br />
+@{ if (Model.ShowHubbel)
+    {
 
-<div class="row">
-    <span class="col-1"></span>
-    <img class="img-thumbnail col-3" src="~/Images/Books/AntiFragile.jpg" />
-    <img class="img-thumbnail col-3" src="~/Images/Books/StressTest.jpg" />
-</div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 img-thumbnail">
+                <img src="~/Images/Books/Uncertain World.jpg" />
+                <div> Bob is so cool. Piercing analytical mind.</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 img-thumbnail">
+                <img src="~/Images/Books/AntiFragile.jpg" />
+                <div>Taleb will tear you wide open. Also change you're world view</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 img-thumbnail">
+                <img src="~/Images/Books/StressTest.jpg" />
+                <div>Tim is a hero and and thinks in an inspiringly pragmatic manner.</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 img-thumbnail">
+                <img src="~/Images/Books/RichardFeynman.jpg" />
+                <div>Only book that's ever truly prevented me from sleeping </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 img-thumbnail">
+                <img src="~/Images/Books/AgeOfTurbulence.jpg" />
+                <div> Bob is so cool. Piercing analytical mind.</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 img-thumbnail">
+                <img src="~/Images/Books/PaulAllen.jpg" />
+                <div>Taleb will tear you wide open. Also change you're world view</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 img-thumbnail">
+                <img src="~/Images/Books/LeonardoDaVinci.jpg" />
+                <div>Tim is a hero and and thinks in an inspiringly pragmatic manner.</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 img-thumbnail">
+                <img src="~/Images/Books/BenFranklin.jpg" />
+                <div>Only book that's ever truly prevented me from sleeping </div>
+            </div>
+        </div>
+
+        <br />
+
+    }
+
+    else
+    {
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <img src="~/Images/Books/Uncertain World.jpg" />
+                <div> Bob is so cool. Piercing analytical mind.</div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <img src="~/Images/Books/AntiFragile.jpg" />
+                <div>Taleb will tear you wide open. Also change you're world view</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 ">
+                <img src="~/Images/Books/StressTest.jpg" />
+                <div>Tim is a hero and and thinks in an inspiringly pragmatic manner.</div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <img src="~/Images/Books/RichardFeynman.jpg" />
+                <div>Only book that's ever truly prevented me from sleeping </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <img src="~/Images/Books/AgeOfTurbulence.jpg" />
+                <div>The Maestro was actually like really smart.</div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <img src="~/Images/Books/PaulAllen.jpg" />
+                <div>Best part are the stories of Paul and Bill when they were young hustlers.</div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <img src="~/Images/Books/LeonardoDaVinci.jpg" />
+                <div>Beautiful pictures and nice paper in this book.</div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <img src="~/Images/Books/TheCourageToAct.jpg" />
+                <div>It's Uncle Ben!</div>
+            </div>
+        </div>
+
+        <br />
+    }
 
 
+}
 
-@*<div class="img-thumbnail col-3">
-    <img src="~/Images/Books/Uncertain World.jpg" />
-    <div>
-        <p>
-            Bob Rubin is a swell guy. More words here. Brief Description or review? But I think all books need either a description here.
-            Lot more effort, but should clicking on image to you to another page with more info?
-        </p>
-    </div>
-</div>*@  
