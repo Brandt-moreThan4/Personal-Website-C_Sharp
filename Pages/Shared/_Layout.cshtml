@@ -6,28 +6,13 @@
     <title>@ViewData["Title"] - FunWithBrandt</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-
+    
     <style>
 
-        /*.tiger-logo {
-            width: 40px;
-            height: 40px;
-            margin: 10px 10px 0px 10px;         
-        }
-
-        .logo-container {
-            float:left;
-        }*/
 
         header {
-            background-color: rgb(179, 224, 255);           
+            background-color: rgb(179, 224, 255);
         }
-
-        #mainContent {
-            /*background-color: #fff;*/
-            padding: 5px;
-        }
-
 
     </style>
 
@@ -36,9 +21,6 @@
 
 <body>
     <header>
-        @*<a class="logo-container" asp-area="" asp-page="/Index">
-            <img class="tiger-logo" src="~/Images/LSUTiger.png" />
-        </a>*@
 
         @*navbar-light bg-white*@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
@@ -48,7 +30,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1 navbar-right">
+                    <ul class="navbar-nav flex-grow-1 navbar-right justify-content-end">
                         <li class="nav-item">
                             <a class="nav-link" style="color:black" asp-area="" asp-page="/Index">Home</a>
                         </li>
@@ -75,7 +57,7 @@
 
         <div class="container">
             <div @*class="row"*@>
-                <main id="mainContent" role="main" class="pb-3">
+                <main role="main" class="pb-3">
                     @RenderBody()
                 </main>
             </div>

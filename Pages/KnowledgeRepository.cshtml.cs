@@ -21,7 +21,6 @@ namespace FunWithBrandt
         public  IActionResult OnPost()
         {
             ShowHubbel = true;
-            var haha  = ShowHubbel ? "lol" : "hH";
             knowledgeRecords = DataReader.KnowledgeRead();
             return Page();
         }

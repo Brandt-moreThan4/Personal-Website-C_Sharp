@@ -7,8 +7,9 @@
 <head>
     <style>
 
-        .welcome-text {
-            /*max-width:900px;*/
+        .img-container {
+            width:250px;
+            height:300px;
         }
 
         .carousel-image {
@@ -27,25 +28,34 @@
     This website is currently under development. Don't judge it to harshly for being shitty
 </div>
 
-<div class="row">
-    <div class="col">
-        <h1 class="text-center">Welcome</h1>
+
+<h1 class="text-center">Welcome </h1>
+
+<form method="post">
+    <button formmethod="post" type="submit" class="btn btn-light">For Hubbell</button>
+</form>
+
+<br />
+@{ if (Model.ShowHubbel)
+    {
         <p>
             Hubbell: Should I have this top part be an "About Me" section and then the bottom be a "Website Architecture"
-            section which has why I made it and stuff? Or something that sounds less douchey. 
+            section which has why I made it and stuff? Or something that sounds less douchey.
             Or should I have that be a separate tab? Or do I just not need that? I kind of feel like the idea of a really short bio
             ,but if it's too short then I think this page will look bad.
         </p>
-    </div>
-</div>
+    }
 
-<button class="btn btn-success btn-group-lg d-none d-lg-block">Big Screen Only</button>
+}
 
-<br /><br />
 
 <div class="row">
-    <div class="welcome-text col-9">
-        
+
+    <div class="col">
+
+        <div class="float-right">
+            <img class="rounded img-fluid img-container" src="~/Images/lsuGraduation.jpg" />
+        </div>
         <p> The purpose behind creating this website was threefold. </p>
 
         <p>
@@ -63,22 +73,17 @@
             knowledge repository pages came to be. The book page will allow me to keep track of my reading and give commentary to my future self and others.
             Knowledge repository is intended to just be a storehouse for any sources of information that are useful or cool.
         </p>
+
     </div>
-
-    <div class="col-2">
-        <img style="width:250px; height:300px;" src="~/Images/lsuGraduation.jpg" />
-    </div>
-
-
 
 </div>
 
 
-<br />
-<br />
-<hr />
-<br />
-<br />
+<br/>
+    <br />
+    <hr />
+    <br />
+    <br />
 
 <div class="row">
     <div class="col offset-1">
@@ -121,12 +126,12 @@
             </div>
         </div>
 
-        @*for some reason these look trash*@
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
+@*for some reason these look trash*@
+<a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
     </div>
-</div>
