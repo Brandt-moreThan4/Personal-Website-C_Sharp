@@ -1,0 +1,5 @@
+Reading CFA level 2 economic material and in particular the discussion on economic growth. There is mention of the obvious, but I think not frequently discussed concept of corporate profits as a percent of GDP. Earnings growth for companies can diverge from earnings growth of GDP as a whole if there is a shift in the share of profits that companies’ claim from total GDP. What drives this share? Corporate power? Unions? Social sentiment? Composition of stock ownership? Labor skill levels? Physical capital? Seems like it would be a pretty cool variable to understand on a deep level. Could potentially facilitate comprehending of shorter-term movements. Presumably there is a long run equilibrium value.
+
+<img>/Images/InflationGraph.png<img>
+
+Completely unrelated, but today I also heard the best analogy so far for what classes are. Memory on your computer is a pile of cookie dough. The class is a cookie cutter. An instance of the class means you just take a scoop of the cookie dough and apply the cookie cutter to it. Then with that individual template you can add all sorts of sprinkles and icings or whatever bells and whistles you want.

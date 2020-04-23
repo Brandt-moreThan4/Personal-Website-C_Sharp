@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Blog\" />
     <Folder Include="wwwroot\Images\LanguageLogos\" />
   </ItemGroup>
 

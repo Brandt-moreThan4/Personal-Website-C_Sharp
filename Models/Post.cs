@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 
 namespace FunWithBrandt.Models
 {
-    public class BlogPost
+    public class Post
     {
-        public string Date { get; set; }
         public string Title { get; set; }
-        public List<string> Content { get; set; }
 
     }
 }

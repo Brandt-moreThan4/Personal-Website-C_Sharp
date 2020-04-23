@@ -22,7 +22,6 @@
 <body>
     <header>
 
-        @*navbar-light bg-white*@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -43,9 +42,9 @@
                         <li class="nav-item">
                             <a class="nav-link"  style="color:black" asp-area="" asp-page="/Programs">Programs</a>
                         </li>
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link" style="color:black" asp-area="" asp-page="/Graphs">Graphs</a>
-                        </li>
+                        </li>*@
                         <li class="nav-item">
                             <a class="nav-link" style="color:black" asp-area="" asp-page="/KnowledgeRepository">Knowledge Repository</a>
                         </li>
@@ -56,7 +55,7 @@
     </header>
 
         <div class="container">
-            <div @*class="row"*@>
+            <div>
                 <main role="main" class="pb-3">
                     @RenderBody()
                 </main>

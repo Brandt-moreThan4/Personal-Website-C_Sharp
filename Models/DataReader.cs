@@ -14,7 +14,6 @@ namespace FunWithBrandt.Models
         {
 
             var records = new List<KnowledgeRecord>();
-            //var path = @"C:\Users\bgreen3\Desktop\PersonalWebsite\wwwroot\Data\KnowledgeRepoTable.csv";
             var path = Directory.GetCurrentDirectory() + @"\wwwroot\Data\KnowledgeRepoTable.csv";
             var line = string.Empty; string [] splitString;
             KnowledgeRecord record;
@@ -43,15 +42,47 @@ namespace FunWithBrandt.Models
 
         }
 
+        public static List<string> ReadBlogText(string fileName)
+        {
+            var blogContentPath = GetRootPath() + @"BlogContent\" + fileName + ".txt";
+
+            var content = new List<string>();
+            var line = string.Empty;
+
+            if (File.Exists(blogContentPath))
+            {
+                using (StreamReader sw = new StreamReader(blogContentPath))
+                {
+                    line = sw.ReadLine();
+                    while (line != null)
+                    {
+                        content.Add(line);
+                        line = sw.ReadLine();
+                    }
+
+
+                }
+
+            }
+            else
+            {
+                Debug.Print("File Does not exist");
+            }
+            return content;
+
+
+            throw new NotImplementedException();
+        }
+
         public static string ReadCodeText(string fileName)
         {
             string tempString = string.Empty;
-            var path = Directory.GetCurrentDirectory() + @"\wwwroot\ProgramText\" + fileName + ".txt"; ;
+            var codeTxtPath = GetRootPath() + @"ProgramText\" + fileName + ".txt";
+            
             var line = string.Empty;
-
-            if (File.Exists(path))
+            if (File.Exists(codeTxtPath))
             {
-                using (StreamReader sw = new StreamReader(path))
+                using (StreamReader sw = new StreamReader(codeTxtPath))
                 {
                     tempString = sw.ReadToEnd();
 
@@ -63,6 +94,11 @@ namespace FunWithBrandt.Models
                 Debug.Print("File Does not exist");
             }
             return tempString;
+        }
+
+        private static string GetRootPath()
+        {
+            return Directory.GetCurrentDirectory() + @"\wwwroot\";
         }
 
     }
