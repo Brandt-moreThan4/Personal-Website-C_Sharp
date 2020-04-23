@@ -1,0 +1,4 @@
+To briefly touch on yesterday's issue, assuming that you should not invest all of your money into that one mispriced security how much money should you invest?
+The easiest and first way to think about it for me would be to continue to use a basic mean variance analysis. Essentially you do all of the normal stuff: using data on expected returns, variances, and covariances you construct a portfolio with the highest sharp ratio and invest it that portfolio however much your risk preferences dictate. Only way this is different than normal is that you adjust the expected return on the mispriced security to account for the mispricing. Same variance and covariance? Obviously, the implementation of this would be trickier and there are surely nuances that I am ignoring, but I think this is probably a decent way to at least begin to think of how much to allocate in your portfolio. Only problem is that it doesn't have a feel good intuition to back it up really.
+
+

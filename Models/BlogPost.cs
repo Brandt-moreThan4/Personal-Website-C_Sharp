@@ -10,6 +10,6 @@ namespace FunWithBrandt.Models
         public string Date { get; set; }
         public string Title { get; set; }
         public List<string> Content { get; set; }
-
+        public string ContentFileName { get; set; }
     }
 }

@@ -27,30 +27,37 @@ namespace FunWithBrandt
 
             allPosts.Add(new BlogPost()
             {
-                Date = "February 9, 2020",
+                Date = "March 3, 2020",
                 Title = "Corporate Profits",
-                Content = DataReader.ReadBlogText("CorporateProfits")
+                Content = DataReader.ReadBlogText("CorporateProfits_2020-3-2")
             });
 
             allPosts.Add(new BlogPost()
             {
                 Date = "February 9, 2020",
                 Title = "Manager Style",
-                Content = DataReader.ReadBlogText("Manager Style")
+                Content = DataReader.ReadBlogText("ManagerStyle_2020-2-9")
+            });
+
+            allPosts.Add(new BlogPost()
+            {
+                Date = "February 2, 2020",
+                Title = "Investment Execution-2",
+                Content = DataReader.ReadBlogText("InvestmentExecution-2_2020-2-2")
             });
 
             allPosts.Add(new BlogPost()
             {
                 Date = "February 1, 2020",
                 Title = "Investment Execution",
-                Content = DataReader.ReadBlogText("Investment Execution")
+                Content = DataReader.ReadBlogText("InvestmentExecution_2020-2-1")
             });
 
             allPosts.Add(new BlogPost()
             {
                 Date = "September 29, 2019",
                 Title = "Friends in WW I",
-                Content = DataReader.ReadBlogText("WW1")
+                Content = DataReader.ReadBlogText("WW1_2019-9-29")
             });
 
             return allPosts;
