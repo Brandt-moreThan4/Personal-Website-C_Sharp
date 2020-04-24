@@ -42,6 +42,35 @@ namespace FunWithBrandt.Models
 
         }
 
+        public static List<Book> ReadBooks()
+        {
+            var books = new List<Book>(); Book book; var line = string.Empty; string[] splitString;
+            var path = Directory.GetCurrentDirectory() + @"\wwwroot\Data\BooksDB.csv";
+            
+            
+
+            if (File.Exists(path))
+            {
+                using (StreamReader sw = new StreamReader(path))
+                {
+                    line = sw.ReadLine();
+                    while (line != null)
+                    {
+                        splitString = line.Split(",");
+                        book = new Book();
+                        book.BookId = Convert.ToInt32(splitString[0]);
+                        book.Title = splitString[1];
+                        book.CoverImageName = splitString[2];
+                        book.CoverDescription = splitString[3];
+                        book.LongDescription = splitString[4];
+                        books.Add(book);
+                        line = sw.ReadLine();
+                    }
+                }
+            }
+            return books;
+        }
+
         public static List<string> ReadBlogText(string fileName)
         {
             var blogContentPath = GetRootPath() + @"BlogContent\" + fileName + ".txt";

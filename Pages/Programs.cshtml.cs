@@ -38,7 +38,7 @@ namespace FunWithBrandt
             new ProgramPost{
                 Title = "Outlook Email",
                 Language = "VBA",
-                Description = @"Basic sub to create an outlook email without sending it. Now that I am looking at this though, this should definitely just be a function
+                Description = @"Basic sub to create an outlook email from excel without sending it. Now that I am looking at this though, this should definitely just be a function
                                 with the email inputs as parameters.",
 
                 Code = DataReader.ReadCodeText("OutlookEmail")

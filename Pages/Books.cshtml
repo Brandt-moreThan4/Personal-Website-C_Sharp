@@ -15,12 +15,11 @@
 </head>
 
 <h1>Books</h1>
-<form method="post">
-    <button formmethod="post" type="submit" class="btn btn-light">For Hubbell</button>
-</form>
+@*<form method="post">
+        <button formmethod="post" type="submit" class="btn btn-light">For Hubbell</button>
+    </form>
 
-<br />
-<br />
+    <br />*@
 <br />
 
 
@@ -32,119 +31,32 @@
 <br />
 
 
-@{ if (Model.ShowHubbel)
-    {
-
-        <div class="row">
-            <div class="col-lg-3 col-sm-6 img-thumbnail">
-                <img src="~/Images/Books/Uncertain World.jpg" />
-                <div> Bob is so cool. Piercing analytical mind.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6 img-thumbnail">
-                <img src="~/Images/Books/AntiFragile.jpg" />
-                <div>Taleb will tear you wide open. Also change you're world view</div>
-            </div>
-            <div class="col-lg-3 col-sm-6 img-thumbnail">
-                <img src="~/Images/Books/StressTest.jpg" />
-                <div>Tim is a hero and and thinks in an inspiringly pragmatic manner.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6 img-thumbnail">
-                <img src="~/Images/Books/RichardFeynman.jpg" />
-                <div>Only book that's ever truly prevented me from sleeping </div>
-            </div>
-        </div>
-
-        <br />
-
-        <div class="row">
-            <div class="col-lg-3 col-sm-6 img-thumbnail">
-                <img src="~/Images/Books/AgeOfTurbulence.jpg" />
-                <div> Bob is so cool. Piercing analytical mind.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6 img-thumbnail">
-                <img src="~/Images/Books/PaulAllen.jpg" />
-                <div>Taleb will tear you wide open. Also change you're world view</div>
-            </div>
-            <div class="col-lg-3 col-sm-6 img-thumbnail">
-                <img src="~/Images/Books/LeonardoDaVinci.jpg" />
-                <div>Tim is a hero and and thinks in an inspiringly pragmatic manner.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6 img-thumbnail">
-                <img src="~/Images/Books/BenFranklin.jpg" />
-                <div>Only book that's ever truly prevented me from sleeping </div>
-            </div>
-        </div>
-
-        <br />
-
-    }
-
-    else
+@{
+    int bookCount = 0;
+    for (int i = 0; i < Model.RowCount; i++)
     {
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/Uncertain World.jpg" />
-                <div> Bob is so cool. Piercing analytical mind.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/AntiFragile.jpg" />
-                <div>Taleb will tear you wide open. Also change you're world view</div>
-            </div>
-            <div class="col-lg-3 col-sm-6 ">
-                <img src="~/Images/Books/StressTest.jpg" />
-                <div>Tim is a hero and and thinks in an inspiringly pragmatic manner.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/RichardFeynman.jpg" />
-                <div>Only book that's ever truly prevented me from sleeping </div>
-            </div>
+
+           @{ 
+               for (int x = 0; x < 4; x++)
+               {
+                   if (bookCount < Model.Books.Count)
+                   {
+                        <div class="col-lg-3 col-sm-6">
+
+                            <img @(@"src= /Images/Books/" + Model.Books[bookCount].CoverImageName)  />
+                            <div> @Model.Books[bookCount].CoverDescription</div>
+                        </div>
+                   }
+                   bookCount++;
+
+               }
+            }
+
         </div>
-
-        <br />
-
-        <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/AgeOfTurbulence.jpg" />
-                <div>The Maestro was actually like really smart.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/PaulAllen.jpg" />
-                <div>Best part are the stories of Paul and Bill when they were young hustlers.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/LeonardoDaVinci.jpg" />
-                <div>Beautiful pictures and nice paper in this book.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/TheCourageToAct.jpg" />
-                <div>It's Uncle Ben!</div>
-            </div>
-        </div>
-
-        <br />
-
-        <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/MoreThanYouKnow.jpg" />
-                <div>Michael is actually the best financial thinker.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/AManForAllMarkets.jpg" />
-                <div>Thorpe is cray</div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/AgainstTheGods.jpg" />
-                <div>Beautiful pictures and nice paper in this book.</div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <img src="~/Images/Books/Napoleon.jpg" />
-                <div></div>
-            </div>
-        </div>
-
         <br />
     }
-
-
 }
+
+
 

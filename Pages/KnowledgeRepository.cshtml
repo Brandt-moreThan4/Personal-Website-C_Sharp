@@ -23,12 +23,12 @@
     Also going to add a search/filter funcationality at some point.
 </p>
 
-<form method="post">
+@*<form method="post">
     <button formmethod="post" type="submit" class="btn btn-light">For Hubbell</button>
 </form>
-<br />
+<br />*@
 
-<label for="searchBox">Search Keywords</label>
+@*<label for="searchBox">Search</label>*@
 <form method="get">
     <div class="form-group">
         <div class="input-group">
@@ -40,37 +40,13 @@
     </div>
 </form>
 
-
-@{ if (Model.ShowHubbel)
-    {
-        <p>
-            I think the two columns looks weird. I think I need a third for something? Or I could just play with it more
-            to make it look prettier I guess. Also I'm thinking I would like to have an extended description somehwere with like
-            more detailed notes. Not really sure where that should go or if it should be a drop down or extension somewhere?
-        </p>
-
-        <p>
-            I think figuring out a way to categorize these may be a lot more involved than I was thinking.
-            I'm thinking I will need master categories with a bunch of sub categories.
-        </p>
-    }
-
-}
-
-
-<br />
 <table class="table table-responsive table-striped table-bordered table-hover table-sm">
 
     <thead>
         <tr>
             <th>Person/Institution</th>
             <th>Description</th>
-            @{
-                if (!Model.ShowHubbel)
-                {
-                    <th>Keywords</th>
-                }
-            }
+            <th>Keywords</th>
         </tr>
     </thead>
 
