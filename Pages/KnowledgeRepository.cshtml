@@ -1,4 +1,4 @@
-﻿@page
+﻿ @page
 @model FunWithBrandt.KnowledgeRepositoryModel
 @{
     ViewData["Title"] = "KnowledgeRepository";
@@ -10,6 +10,8 @@
     .table-hover tbody tr:hover {
         background-color: rgb(179, 224, 255);
     }
+
+/*I need minimum width sizing for table*/
 
 </style>
 
@@ -25,6 +27,19 @@
     <button formmethod="post" type="submit" class="btn btn-light">For Hubbell</button>
 </form>
 <br />
+
+<label for="searchBox">Search Keywords</label>
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input id="searchBox" type="search" class="search" asp-for="SearchTerm"/>
+                <button class="btn btn-secondary btn-sm">
+                    <span class="glypicon glyphicon-search"></span>Search
+                </button>
+        </div>
+    </div>
+</form>
+
 
 @{ if (Model.ShowHubbel)
     {
@@ -60,7 +75,7 @@
     </thead>
 
     <tbody>
-        @foreach (var record in Model.knowledgeRecords)
+        @foreach (var record in Model.displayedKnowledgeRecords)
         {
         <tr>
             <td>@record.Person</td>
