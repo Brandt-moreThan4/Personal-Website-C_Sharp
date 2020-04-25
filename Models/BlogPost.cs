@@ -7,6 +7,7 @@ namespace FunWithBrandt.Models
 {
     public class BlogPost
     {
+        public int BlodId { get; set; }
         public string Date { get; set; }
         public string Title { get; set; }
         public List<string> Content { get; set; }

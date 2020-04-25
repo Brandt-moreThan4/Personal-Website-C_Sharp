@@ -5,49 +5,32 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Web;
 using System.Diagnostics;
+using System.Configuration;
+using System.Data;
+using System.Data.SQLite;
+using Dapper;
+using Microsoft.Extensions.Configuration;
 
-namespace FunWithBrandt.Models
+
+namespace FunWithBrandt.Models.Data
 {
     public class DataReader
     {
-        public static List<KnowledgeRecord> KnowledgeRead()
+
+        public static List<KnowledgeRecord> GetKnowledgeRecords()
         {
-
-            var records = new List<KnowledgeRecord>();
-            var path = Directory.GetCurrentDirectory() + @"\wwwroot\Data\KnowledgeRepoTable.csv";
-            var line = string.Empty; string [] splitString;
-            KnowledgeRecord record;
-
-            if (File.Exists(path))
+            using (IDbConnection connection = new SQLiteConnection(ConnectionStrings.WebData))
             {
-                using (StreamReader sw = new StreamReader(path))
-                {
-                    line = sw.ReadLine();
-                    while (line != null)
-                    {
-                        splitString = line.Split(",");
-                        record = new KnowledgeRecord();                        
-                        record.Person = splitString[0];
-                        record.Institution = splitString[1];
-                        record.Description = splitString[2];
-                        record.Source = splitString[3];
-                        record.Keywords = splitString[4];
-                        records.Add(record);
-                        line = sw.ReadLine();
-                    }                    
-                }
+                List<KnowledgeRecord> output = connection.Query<KnowledgeRecord>("Select * From Knowledge", new DynamicParameters()).ToList();
+                return output;
             }
-
-            return records;
-
         }
 
         public static List<Book> ReadBooks()
         {
             var books = new List<Book>(); Book book; var line = string.Empty; string[] splitString;
             var path = Directory.GetCurrentDirectory() + @"\wwwroot\Data\BooksDB.csv";
-            
-            
+                        
 
             if (File.Exists(path))
             {
@@ -100,7 +83,7 @@ namespace FunWithBrandt.Models
             return content;
 
 
-            throw new NotImplementedException();
+            
         }
 
         public static string ReadCodeText(string fileName)
