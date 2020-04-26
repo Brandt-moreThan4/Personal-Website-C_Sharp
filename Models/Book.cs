@@ -10,6 +10,6 @@ namespace FunWithBrandt.Models
         public int BookId { get; set; }
         public string CoverDescription { get; set; }
         public string CoverImageName { get; set; }
-        public string LongDescription { get; set; }
+        public string Content { get; set; }
     }
 }

@@ -53,6 +53,18 @@ namespace FunWithBrandt
                 Code = DataReader.ReadCodeText("VBA Utils")
             },
 
+            new ProgramPost{
+                Title = "Resizing Images in Bulk",
+                Language = "Python",
+                Description = @"This script resizes all of the images in the specified folder to have the same width and height. 
+                                 I think you'll have to install pillow module, but afterwords you should only need to input the minimum width,
+                                  desired aspect ratio, and folder path. Be careful that it will save over the old images in the folder.",
+                Code = DataReader.ReadCodeText("ResizeImages"),
+                Source = @" I used this answer to get started and then made some small adjustments for my needs.
+                            https://stackoverflow.com/questions/273946/how-do-i-resize-an-image-using-pil-and-maintain-its-aspect-ratio",
+                
+            },
+
 
 
         };

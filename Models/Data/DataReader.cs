@@ -45,7 +45,7 @@ namespace FunWithBrandt.Models.Data
                         book.Title = splitString[1];
                         book.CoverImageName = splitString[2];
                         book.CoverDescription = splitString[3];
-                        book.LongDescription = splitString[4];
+                        book.Content = splitString[4];
                         books.Add(book);
                         line = sw.ReadLine();
                     }
