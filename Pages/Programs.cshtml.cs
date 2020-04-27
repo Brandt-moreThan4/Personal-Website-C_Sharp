@@ -27,7 +27,7 @@ namespace FunWithBrandt
 
         {
             new ProgramPost{
-                Title = "Coloy-Coordinate Finder",
+                Title = "Color-Coordinate Finder",
                 Language = "Python",
                 Description = @"Use this to find the (X,Y) coordinates or RGB code for a particular location on your monitor. Just run it and
                                 hover your mouse over the area in question. This script runs continuously until interrupted with the control + c keyboard command.
