@@ -43,9 +43,10 @@ namespace FunWithBrandt.Models.Data
                         book = new Book();
                         book.BookId = Convert.ToInt32(splitString[0]);
                         book.Title = splitString[1];
-                        book.CoverImageName = splitString[2];
-                        book.CoverDescription = splitString[3];
-                        book.Content = splitString[4];
+                        book.Author = splitString[2];
+                        book.CoverImageName = splitString[3];
+                        book.CoverDescription = splitString[4];
+                        book.Content = splitString[5];
                         books.Add(book);
                         line = sw.ReadLine();
                     }

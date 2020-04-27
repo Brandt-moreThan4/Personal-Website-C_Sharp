@@ -12,6 +12,11 @@
             width: 220px;
             height: 319px;
         }
+
+        .cover-description {
+            max-width: 220px;
+        }
+
     </style>
 </head>
 
@@ -42,7 +47,9 @@
                         <div class="col-lg-3 col-sm-6">
 
                             <img @(@"src= /Images/Books/" + Model.Books[bookCount].CoverImageName)  />
-                            <div> @Model.Books[bookCount].CoverDescription</div>
+                            <div class="cover-description">
+                                @Model.Books[bookCount].CoverDescription
+                            </div>
                         </div>
                    }
                    bookCount++;
