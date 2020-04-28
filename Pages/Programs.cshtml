@@ -31,7 +31,7 @@
     </style>
 </head>
 
-<h2 class="text-center">Programs</h2>
+<h2>Programs</h2>
 <br />
 @*<form method="post">
     <button formmethod="post" type="submit" class="btn btn-light">For Hubbell</button>
@@ -92,6 +92,12 @@
     <div class="tab-pane fade" id="CSharp" role="tabpanel" aria-labelledby="CSharp-tab">
         <div>
             <img class="language-logo" src="~/Images/LanguageLogos/CSharp.png" />
+            <p>
+                C# programs don't lend themselves as easily to just pasting in a block of code.
+                The code for C# programs is typically spread out amongst many separate files with each only
+                focusing on a small piece of the overall programm. I haven't yet figured out the best way to display these.
+                Probably just a small description with a link to github.
+            </p>
         </div>
         @foreach (var post in Model.programPosts)
         {

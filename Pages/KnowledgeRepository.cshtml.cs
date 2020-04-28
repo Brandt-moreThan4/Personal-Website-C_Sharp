@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FunWithBrandt.Models;
+using FunWithBrandt.Models.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -12,14 +13,14 @@ namespace FunWithBrandt
     {
         public List<KnowledgeRecord> knowledgeRecords;
         public List<KnowledgeRecord> displayedKnowledgeRecords;
-        public bool ShowHubbel;
 
+        //This property is set by the search box input.
         [BindProperty(SupportsGet = true) ]
         public string SearchTerm { get; set; }
 
         public KnowledgeRepositoryModel()
         {
-            knowledgeRecords = DataReader.KnowledgeRead();
+            knowledgeRecords = DataReader.GetKnowledgeRecords();
         }
 
         public void OnGet()
@@ -27,12 +28,14 @@ namespace FunWithBrandt
             displayedKnowledgeRecords = GetKnowledgeRecordsByKeyWord();
         }
 
+        [BindProperty]
+        public KnowledgeRecord KnowledgeId { get; set; }
         public  IActionResult OnPost()
-        {
-            ShowHubbel = true;
+        {            
             displayedKnowledgeRecords = GetKnowledgeRecordsByKeyWord();
             return Page();
         }
+
 
         public List<KnowledgeRecord> GetKnowledgeRecordsByKeyWord()
         {
@@ -45,9 +48,9 @@ namespace FunWithBrandt
           
             var  records = from k in knowledgeRecords
                            where string.IsNullOrEmpty(searchString) || k.Keywords.ToUpper().Contains(searchString) ||
-                           k.Description.ToUpper().Contains(searchString) || k.Person.ToUpper().Contains(searchString)
+                           k.Description.ToUpper().Contains(searchString) || k.Person_Institution.ToUpper().Contains(searchString)
                            
-                           orderby k.Person
+                           orderby k.Person_Institution
                            select k;
 
             return records.ToList();

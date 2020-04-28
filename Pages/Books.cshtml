@@ -7,19 +7,21 @@
 
 <head>
     <style>
+        /*Aspect ratio of 1.45*/
         img {
-            width: 200px;
-            height: 260px;
+            width: 220px;
+            height: 319px;
         }
+
+        .cover-description {
+            max-width: 220px;
+        }
+
     </style>
 </head>
 
 <h1>Books</h1>
-@*<form method="post">
-        <button formmethod="post" type="submit" class="btn btn-light">For Hubbell</button>
-    </form>
 
-    <br />*@
 <br />
 
 
@@ -45,7 +47,9 @@
                         <div class="col-lg-3 col-sm-6">
 
                             <img @(@"src= /Images/Books/" + Model.Books[bookCount].CoverImageName)  />
-                            <div> @Model.Books[bookCount].CoverDescription</div>
+                            <div class="cover-description">
+                                @Model.Books[bookCount].CoverDescription
+                            </div>
                         </div>
                    }
                    bookCount++;

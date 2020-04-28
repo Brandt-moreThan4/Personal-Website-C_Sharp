@@ -33,9 +33,9 @@
     <div class="form-group">
         <div class="input-group">
             <input id="searchBox" type="search" class="search" asp-for="SearchTerm"/>
-                <button class="btn btn-secondary btn-sm">
-                    <span class="glypicon glyphicon-search"></span>Search
-                </button>
+            <button class="btn btn-secondary btn-sm">
+                <span class="glypicon glyphicon-search"></span>Search
+            </button>
         </div>
     </div>
 </form>
@@ -54,19 +54,23 @@
         @foreach (var record in Model.displayedKnowledgeRecords)
         {
         <tr>
-            <td>@record.Person</td>
+            <td>@record.Person_Institution</td>
             <td><a href=@record.Source>@record.Description</a></td>
+            <td>@record.Keywords</td>
+            @*<td>
+                <form method="post">
+                    <button formmethod="post" type="submit" asp-for="" class="btn btn-dark">Delete</button>
+                </form>
 
-            @{
-                if (!Model.ShowHubbel)
-                {
-                    <td>@record.Keywords</td>
-                }
-            }
-
+            </td>*@
         </tr>
         }
-    </tbody>
+            </tbody>
 
-</table>
+        </table>
 
+        @*<script>
+            function Delete(id) {
+                alert("hahah" + id)
+            }
+        </script>*@
