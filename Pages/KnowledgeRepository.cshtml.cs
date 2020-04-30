@@ -20,7 +20,7 @@ namespace FunWithBrandt
 
         public KnowledgeRepositoryModel()
         {
-            knowledgeRecords = DataReader.GetKnowledgeRecords();
+            knowledgeRecords = DataReader.GetKnowledge();
         }
 
         public void OnGet()

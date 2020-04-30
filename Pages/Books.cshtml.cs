@@ -44,7 +44,7 @@ namespace FunWithBrandt
 
         public List<Book> GetBooks()
         {
-            List<Book> books = DataReader.ReadBooks();
+            List<Book> books = DataReader.GetBooks();
             return books;
         }
 

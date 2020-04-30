@@ -10,45 +10,66 @@ using System.Data;
 using System.Data.SQLite;
 using Dapper;
 using Microsoft.Extensions.Configuration;
-
+using OfficeOpenXml;
 
 namespace FunWithBrandt.Models.Data
 {
     public class DataReader
     {
 
-        public static List<KnowledgeRecord> GetKnowledgeRecords()
+        public static List<KnowledgeRecord> GetKnowledge()
         {
-            using (IDbConnection connection = new SQLiteConnection(ConnectionStrings.WebData))
+            var knowledgeRecords = new List<KnowledgeRecord>(); KnowledgeRecord knowledgeRec;
+            var dbPath = Directory.GetCurrentDirectory() + @"\wwwroot\Data\websiteDB.xlsx";
+
+            if (File.Exists(dbPath))
             {
-                List<KnowledgeRecord> output = connection.Query<KnowledgeRecord>("Select * From Knowledge", new DynamicParameters()).ToList();
-                return output;
+                ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                FileInfo fi = new FileInfo(dbPath);
+
+                using (ExcelPackage excelPack = new ExcelPackage(fi))
+                {
+                    var bookWs = excelPack.Workbook.Worksheets["Knowledge"];
+                    var lastRow = bookWs.Dimension.End.Row;
+                    for (int i = 1; i <= lastRow; i++)
+                    {
+                        knowledgeRec = new KnowledgeRecord();
+                        knowledgeRec.KnowledgeId = Convert.ToInt32(bookWs.Cells[i, 1].Value.ToString());
+                        knowledgeRec.Person_Institution = bookWs.Cells[i, 2].Value.ToString();
+                        knowledgeRec.Description = bookWs.Cells[i, 3].Value.ToString();
+                        knowledgeRec.Source = bookWs.Cells[i, 4].Value.ToString();
+                        knowledgeRec.Keywords = bookWs.Cells[i, 5].Value.ToString();
+                        knowledgeRecords.Add(knowledgeRec);
+                    }
+                }
             }
+            return knowledgeRecords;
         }
 
-        public static List<Book> ReadBooks()
+        public static List<Book> GetBooks()
         {
-            var books = new List<Book>(); Book book; var line = string.Empty; string[] splitString;
-            var path = Directory.GetCurrentDirectory() + @"\wwwroot\Data\BooksDB.csv";
-                        
+            var books = new List<Book>(); Book book;
+            var dbPath = Directory.GetCurrentDirectory() + @"\wwwroot\Data\websiteDB.xlsx";
 
-            if (File.Exists(path))
+            if (File.Exists(dbPath))
             {
-                using (StreamReader sw = new StreamReader(path))
+                ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                FileInfo fi = new FileInfo(dbPath);
+
+                using (ExcelPackage excelPack = new ExcelPackage(fi))
                 {
-                    line = sw.ReadLine();
-                    while (line != null)
+                    var bookWs = excelPack.Workbook.Worksheets["Books"];
+                    var lastRow = bookWs.Dimension.End.Row;
+                    for (int i = 1; i <= lastRow; i++)
                     {
-                        splitString = line.Split(",");
                         book = new Book();
-                        book.BookId = Convert.ToInt32(splitString[0]);
-                        book.Title = splitString[1];
-                        book.Author = splitString[2];
-                        book.CoverImageName = splitString[3];
-                        book.CoverDescription = splitString[4];
-                        book.Content = splitString[5];
-                        books.Add(book);
-                        line = sw.ReadLine();
+                        book.BookId = Convert.ToInt32(bookWs.Cells[i, 1].Value.ToString());
+                        book.Title = bookWs.Cells[i, 2].Value.ToString();
+                        book.Author = bookWs.Cells[i, 3].Value.ToString();
+                        book.CoverImageName = bookWs.Cells[i, 4].Value.ToString();
+                        book.CoverDescription = bookWs.Cells[i, 5].Value.ToString();
+                        book.Content = bookWs.Cells[i, 6].Value.ToString();
+                        books.Add(book);                          
                     }
                 }
             }
