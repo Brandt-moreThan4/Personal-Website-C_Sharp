@@ -11,6 +11,7 @@ using System.Data.SQLite;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 using OfficeOpenXml;
+using static FunWithBrandt.Models.Data.EPPlusUtils;
 
 namespace FunWithBrandt.Models.Data
 {
@@ -29,16 +30,16 @@ namespace FunWithBrandt.Models.Data
 
                 using (ExcelPackage excelPack = new ExcelPackage(fi))
                 {
-                    var bookWs = excelPack.Workbook.Worksheets["Knowledge"];
-                    var lastRow = bookWs.Dimension.End.Row;
-                    for (int i = 1; i <= lastRow; i++)
+                    var knowledgeWs = excelPack.Workbook.Worksheets["Knowledge"];
+                    var lastRow = GetLastRow(knowledgeWs);
+                    for (int i = 2; i <= lastRow; i++)
                     {
                         knowledgeRec = new KnowledgeRecord();
-                        knowledgeRec.KnowledgeId = Convert.ToInt32(bookWs.Cells[i, 1].Value.ToString());
-                        knowledgeRec.Person_Institution = bookWs.Cells[i, 2].Value.ToString();
-                        knowledgeRec.Description = bookWs.Cells[i, 3].Value.ToString();
-                        knowledgeRec.Source = bookWs.Cells[i, 4].Value.ToString();
-                        knowledgeRec.Keywords = bookWs.Cells[i, 5].Value.ToString();
+                        knowledgeRec.KnowledgeId = Convert.ToInt32(knowledgeWs.Cells[i, 1].Value.ToString());
+                        knowledgeRec.Person_Institution = knowledgeWs.Cells[i, 2].Value.ToString();
+                        knowledgeRec.Description = knowledgeWs.Cells[i, 3].Value.ToString();
+                        knowledgeRec.Source = knowledgeWs.Cells[i, 4].Value.ToString();
+                        knowledgeRec.Keywords = knowledgeWs.Cells[i, 5].Value.ToString();
                         knowledgeRecords.Add(knowledgeRec);
                     }
                 }
@@ -59,8 +60,8 @@ namespace FunWithBrandt.Models.Data
                 using (ExcelPackage excelPack = new ExcelPackage(fi))
                 {
                     var bookWs = excelPack.Workbook.Worksheets["Books"];
-                    var lastRow = bookWs.Dimension.End.Row;
-                    for (int i = 1; i <= lastRow; i++)
+                    var lastRow = GetLastRow(bookWs);
+                    for (int i = 2; i <= lastRow; i++)
                     {
                         book = new Book();
                         book.BookId = Convert.ToInt32(bookWs.Cells[i, 1].Value.ToString());
@@ -75,6 +76,38 @@ namespace FunWithBrandt.Models.Data
             }
             return books;
         }
+
+        public static List<ProgramPost> GetPrograms()
+        {
+            var programs = new List<ProgramPost>(); ProgramPost program;
+            var dbPath = Directory.GetCurrentDirectory() + @"\wwwroot\Data\websiteDB.xlsx";
+
+            if (File.Exists(dbPath))
+            {
+                ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                FileInfo fi = new FileInfo(dbPath);
+
+                using (ExcelPackage excelPack = new ExcelPackage(fi))
+                {
+                    var programWs = excelPack.Workbook.Worksheets["Programs"];
+                    var lastRow = GetLastRow(programWs);
+                    for (int i = 2; i <= lastRow; i++)
+                    {
+                        program = new ProgramPost();
+                        program.ProgramId = Convert.ToInt32(programWs.Cells[i, 1].Value.ToString());
+                        program.Code = programWs.Cells[i, 2].Value.ToString();
+                        program.Description = programWs.Cells[i, 3].Value.ToString();
+                        program.Language = programWs.Cells[i, 4].Value.ToString();
+                        program.Source = programWs.Cells[i, 5].Text;
+                        program.Title = programWs.Cells[i, 6].Value.ToString();
+                        programs.Add(program);
+                    }
+                }
+            }
+            return programs;
+        }
+
+
 
         public static List<string> ReadBlogText(string fileName)
         {
@@ -93,7 +126,6 @@ namespace FunWithBrandt.Models.Data
                         content.Add(line);
                         line = sw.ReadLine();
                     }
-
 
                 }
 
