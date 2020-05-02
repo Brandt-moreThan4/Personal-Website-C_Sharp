@@ -13,6 +13,8 @@ namespace FunWithBrandt.Models
         public string Language { get; set; }
         public string Source { get; set; }
         public string Title { get; set; }
+        public List<string> Comments { get; set; }
+        public int PostId { get; set; }
 
     }
 }

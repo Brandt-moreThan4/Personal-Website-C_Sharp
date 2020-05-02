@@ -14,7 +14,7 @@ namespace FunWithBrandt.Models.Data
             column = column.ToUpper();
             var lastRow = worksheet.Dimension.End.Row;
 
-            while (lastRow >= 1)
+            while (lastRow > 1)
             {
                 cellAddress = column + Convert.ToString(lastRow);
                 if (!string.IsNullOrEmpty(worksheet.Cells[cellAddress].Text))
@@ -22,6 +22,23 @@ namespace FunWithBrandt.Models.Data
                     return lastRow;
                 }
                 lastRow--;
+            }
+
+            return 1;
+        }
+
+
+        public static int GetLastColumn(ExcelWorksheet worksheet, int row = 1)
+        {           
+            var lastCol = worksheet.Dimension.End.Column;
+
+            while (lastCol > 1)
+            {                
+                if (!string.IsNullOrEmpty(worksheet.Cells[row,lastCol].Text))
+                {
+                    return lastCol;
+                }
+                lastCol--;
             }
 
             return 1;

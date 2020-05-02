@@ -1,8 +1,0 @@
-Currently reading CFA level 2 economic material. In particular the discussion on economic growth has stimulated a lot of thought. There is mention of the obvious, but I think not frequently discussed concept of corporate profits as a percent of GDP. Typically you think that aggregate earnings for companies would grow in stride with the economy as whole, but there can certainly be a divergance between earnings growth and GDP if there is a shift in the share of profits that companies' claim from total GDP. Graph below shows how this metric has evolved over time. 
-
-<img>/Images/BlogPics/FREDCorporateProfits.png<img> 
-
-What drives this number? Corporate power? Unions? Social sentiment? Composition of stock ownership? Labor skill levels? Physical capital? Seems like it would be a pretty cool variable to understand on a deep level. Could potentially facilitate comprehending of short to mid-term market movements. Probably would not be as useful for lengthy forecast as presumably there is a long run equilibrium value.
-
-Completely unrelated, but today I also heard the best analogy so far for what classes are. Memory on your computer is a pile of cookie dough. The class is a cookie cutter. An instance of the class means you just take a scoop of the cookie dough and apply the cookie cutter to it. Then with that individual template you can add all sorts of sprinkles and icings or whatever bells and whistles you want. Credit for this description goes to Scott Allen.
-
