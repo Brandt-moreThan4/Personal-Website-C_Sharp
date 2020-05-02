@@ -1,117 +1,150 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
-using System.Web;
 using System.Diagnostics;
-using System.Configuration;
-using System.Data;
-using System.Data.SQLite;
-using Dapper;
-using Microsoft.Extensions.Configuration;
-
+using OfficeOpenXml;
+using System.Linq;
+using static FunWithBrandt.Models.Data.EPPlusUtils;
 
 namespace FunWithBrandt.Models.Data
 {
     public class DataReader
     {
 
-        public static List<KnowledgeRecord> GetKnowledgeRecords()
+        public static List<KnowledgeRecord> GetKnowledge()
         {
-            using (IDbConnection connection = new SQLiteConnection(ConnectionStrings.WebData))
+            var knowledgeRecords = new List<KnowledgeRecord>(); KnowledgeRecord knowledgeRec;
+            var dbPath = Directory.GetCurrentDirectory() + @"\wwwroot\Data\websiteDB.xlsx";
+
+            if (File.Exists(dbPath))
             {
-                List<KnowledgeRecord> output = connection.Query<KnowledgeRecord>("Select * From Knowledge", new DynamicParameters()).ToList();
-                return output;
+                ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                FileInfo fi = new FileInfo(dbPath);
+
+                using (ExcelPackage excelPack = new ExcelPackage(fi))
+                {
+                    var knowledgeWs = excelPack.Workbook.Worksheets["Knowledge"];
+                    var lastRow = GetLastRow(knowledgeWs);
+                    for (int i = 2; i <= lastRow; i++)
+                    {
+                        knowledgeRec = new KnowledgeRecord();
+                        knowledgeRec.KnowledgeId = Convert.ToInt32(knowledgeWs.Cells[i, 1].Text);
+                        knowledgeRec.Person_Institution = knowledgeWs.Cells[i, 2].Text;
+                        knowledgeRec.Description = knowledgeWs.Cells[i, 3].Text;
+                        knowledgeRec.Source = knowledgeWs.Cells[i, 4].Text;
+                        knowledgeRec.Keywords = knowledgeWs.Cells[i, 5].Text;
+                        knowledgeRecords.Add(knowledgeRec);
+                    }
+                }
             }
+            return knowledgeRecords;
         }
 
-        public static List<Book> ReadBooks()
+        public static List<Book> GetBooks()
         {
-            var books = new List<Book>(); Book book; var line = string.Empty; string[] splitString;
-            var path = Directory.GetCurrentDirectory() + @"\wwwroot\Data\BooksDB.csv";
-                        
+            var books = new List<Book>(); Book book;
+            var dbPath = Directory.GetCurrentDirectory() + @"\wwwroot\Data\websiteDB.xlsx";
 
-            if (File.Exists(path))
+            if (File.Exists(dbPath))
             {
-                using (StreamReader sw = new StreamReader(path))
+                ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                FileInfo fi = new FileInfo(dbPath);
+
+                using (ExcelPackage excelPack = new ExcelPackage(fi))
                 {
-                    line = sw.ReadLine();
-                    while (line != null)
+                    var bookWs = excelPack.Workbook.Worksheets["Books"];
+                    var lastRow = GetLastRow(bookWs);
+                    for (int i = 2; i <= lastRow; i++)
                     {
-                        splitString = line.Split(",");
                         book = new Book();
-                        book.BookId = Convert.ToInt32(splitString[0]);
-                        book.Title = splitString[1];
-                        book.Author = splitString[2];
-                        book.CoverImageName = splitString[3];
-                        book.CoverDescription = splitString[4];
-                        book.Content = splitString[5];
-                        books.Add(book);
-                        line = sw.ReadLine();
+                        book.BookId = Convert.ToInt32(bookWs.Cells[i, 1].Text);
+                        book.Title = bookWs.Cells[i, 2].Text;
+                        book.Author = bookWs.Cells[i, 3].Text;
+                        book.CoverImageName = bookWs.Cells[i, 4].Text;
+                        book.CoverDescription = bookWs.Cells[i, 5].Text;
+                        book.Content = bookWs.Cells[i, 6].Text;
+                        books.Add(book);                          
                     }
                 }
             }
             return books;
         }
 
-        public static List<string> ReadBlogText(string fileName)
+        public static List<ProgramPost> GetPrograms()
         {
-            var blogContentPath = GetRootPath() + @"BlogContent\" + fileName + ".txt";
+            var programs = new List<ProgramPost>(); ProgramPost program;
+            var dbPath = Directory.GetCurrentDirectory() + @"\wwwroot\Data\websiteDB.xlsx";
 
-            var content = new List<string>();
-            var line = string.Empty;
-
-            if (File.Exists(blogContentPath))
+            if (File.Exists(dbPath))
             {
-                using (StreamReader sw = new StreamReader(blogContentPath))
+                ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                FileInfo fi = new FileInfo(dbPath);
+
+                using (ExcelPackage excelPack = new ExcelPackage(fi))
                 {
-                    line = sw.ReadLine();
-                    while (line != null)
+                    var programWs = excelPack.Workbook.Worksheets["Programs"];
+                    var lastRow = GetLastRow(programWs);
+                    for (int i = 2; i <= lastRow; i++)
                     {
-                        content.Add(line);
-                        line = sw.ReadLine();
+                        program = new ProgramPost();
+                        program.ProgramId = Convert.ToInt32(programWs.Cells[i, 1].Text);
+                        program.Code = programWs.Cells[i, 2].Text;
+                        program.Description = programWs.Cells[i, 3].Text;
+                        program.Language = programWs.Cells[i, 4].Text;
+                        program.Source = programWs.Cells[i, 5].Text;
+                        program.Title = programWs.Cells[i, 6].Text;
+                        programs.Add(program);
                     }
-
-
                 }
-
             }
-            else
-            {
-                Debug.Print("File Does not exist");
-            }
-            return content;
-
-
-            
+            return programs;
         }
 
-        public static string ReadCodeText(string fileName)
+        public static List<BlogPost> GetBlog()
         {
-            string tempString = string.Empty;
-            var codeTxtPath = GetRootPath() + @"ProgramText\" + fileName + ".txt";
-            
-            var line = string.Empty;
-            if (File.Exists(codeTxtPath))
+            var blogPosts = new List<BlogPost>(); BlogPost blogPost;
+            var dbPath = Directory.GetCurrentDirectory() + @"\wwwroot\Data\websiteDB.xlsx";
+
+            if (File.Exists(dbPath))
             {
-                using (StreamReader sw = new StreamReader(codeTxtPath))
+                ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                FileInfo fi = new FileInfo(dbPath);
+
+                using (ExcelPackage excelPack = new ExcelPackage(fi))
                 {
-                    tempString = sw.ReadToEnd();
-
+                    var blogWs = excelPack.Workbook.Worksheets["Blog"];
+                    var lastRow = GetLastRow(blogWs);
+                    for (int i = 2; i <= lastRow; i++)
+                    {
+                        blogPost = new BlogPost();
+                        blogPost.BlodId = Convert.ToInt32(blogWs.Cells[i, 1].Text);
+                        blogPost.Date = DateTime.Parse(blogWs.Cells[i, 2].Text);
+                        blogPost.Title = blogWs.Cells[i, 3].Text;
+                        blogPost.Content = ParseBlogText(blogWs.Cells[i, 4].Text);
+                        blogPosts.Add(blogPost);
+                    }
                 }
+                
+                blogPosts = blogPosts.OrderByDescending(b => b.Date).ToList();
+
 
             }
-            else
-            {
-                Debug.Print("File Does not exist");
-            }
-            return tempString;
+            return blogPosts;
         }
 
-        private static string GetRootPath()
+        private static List<string> ParseBlogText(string text)
         {
-            return Directory.GetCurrentDirectory() + @"\wwwroot\";
+            List<string> blogChunks = new List<string>();
+            string[] splitText= text.Split("\n");
+
+            foreach (var line in splitText)
+            {
+                blogChunks.Add(line);
+            }
+
+
+            return blogChunks;
         }
 
     }

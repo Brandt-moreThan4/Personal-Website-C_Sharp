@@ -38,7 +38,7 @@
          @foreach (var post in Model.blogPosts) { 
             <div class="blog">
                 <h1 class="blog-date">@post.Title</h1>
-                <h2 class="blog-title">@post.Date</h2>
+                <h2 class="blog-title">@post.Date.ToLongDateString()</h2>
                 <br />
                 <div class="blog-content"> 
 

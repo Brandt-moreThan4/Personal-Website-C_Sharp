@@ -33,12 +33,11 @@
 
 <h2>Programs</h2>
 <br />
-@*<form method="post">
-    <button formmethod="post" type="submit" class="btn btn-light">For Hubbell</button>
-</form>*@
 
-
-
+<p>
+    At some point I'm going to add a bunch of the programs I've created over time to just keep them all in one place
+    and share with the world.
+</p>
 <p>
     Follow me on GitHub: <a href="https://github.com/Brandt-moreThan4">https://github.com/Brandt-moreThan4 </a>
 </p>
@@ -96,7 +95,8 @@
                 C# programs don't lend themselves as easily to just pasting in a block of code.
                 The code for C# programs is typically spread out amongst many separate files with each only
                 focusing on a small piece of the overall programm. I haven't yet figured out the best way to display these.
-                Probably just a small description with a link to github.
+                Probably just a small description with a link to github, but if it seems understandable on its own I may just post
+                individual classes here. 
             </p>
         </div>
         @foreach (var post in Model.programPosts)
@@ -124,7 +124,9 @@
     </div>
 
     <div class="tab-pane fade" id="VBA" role="tabpanel" aria-labelledby="VBA-tab">
-        <br />
+        <div>
+            <img class="language-logo" src="~/Images/LanguageLogos/VBA.png" />
+        </div>
         @foreach (var post in Model.programPosts)
         {
             if (post.Language == "VBA")

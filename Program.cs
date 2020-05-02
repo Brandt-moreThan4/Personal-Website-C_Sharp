@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FunWithBrandt
 {
-    public class Program
+    public class ProgramPost
     {
         public static void Main(string[] args)
         {
