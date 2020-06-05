@@ -119,7 +119,17 @@ namespace FunWithBrandt.Models.Data
                     {
                         blogPost = new BlogPost();
                         blogPost.BlodId = Convert.ToInt32(blogWs.Cells[i, 1].Text);
-                        blogPost.Date = DateTime.Parse(blogWs.Cells[i, 2].Text);
+
+                        //Not all posts have dates.
+                        try
+                        {
+                            blogPost.Date = DateTime.Parse(blogWs.Cells[i, 2].Text);
+                        }
+                        catch (Exception)
+                        {
+;
+                        }
+
                         blogPost.Title = blogWs.Cells[i, 3].Text;
                         blogPost.Content = ParseBlogText(blogWs.Cells[i, 4].Text);
                         blogPosts.Add(blogPost);
